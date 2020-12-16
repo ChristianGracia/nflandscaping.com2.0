@@ -5,9 +5,9 @@
     "author": "christianmgracia@gmail.com",
     "scripts": {
         "build-dev": "webpack --watch",
+        "build": "webpack",
         "start-dev": "nodemon build/server.js",
-        "start": "node build/server.js",
-        "heroku-postbuild": "webpack && node build/server.js"
+        "start": "node build/server.js"
     },
     "dependencies": {
         "@material-ui/core": "^3.1.1",
