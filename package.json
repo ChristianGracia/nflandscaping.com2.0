@@ -7,7 +7,7 @@
         "build-dev": "webpack --watch",
         "start-dev": "nodemon build/server.js",
         "start": "node build/server.js",
-        "heroku-postbuild": "webpack && npm run start"
+        "heroku-postbuild": "webpack && node build/server.js"
     },
     "dependencies": {
         "@material-ui/core": "^3.1.1",

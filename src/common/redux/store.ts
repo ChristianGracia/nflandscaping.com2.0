@@ -3,5 +3,5 @@ export type Store = {
 };
 
 export const initialState: Store = {
-    title: "Hello World!"
+    title: "nflandscaping.com"
 };
