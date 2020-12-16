@@ -9,6 +9,7 @@ import {
 
 import NavLinkButton from "common/components/NavLinkButton/NavLinkButton.component";
 import style from "./AppBar.style";
+import img from "../../../../assets/logo1.png";
 
 interface AppBarProps {
     classes: any;
@@ -38,7 +39,7 @@ class AppBar extends React.Component<AppBarProps> {
                                     variant="contained"
                                     to="/"
                                 >
-                                    Home page
+                                    <img src={img} width="200px" />
                                 </NavLinkButton>
                             </Grid>
                             <Grid
