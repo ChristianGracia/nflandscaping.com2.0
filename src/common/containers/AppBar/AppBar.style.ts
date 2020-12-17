@@ -5,17 +5,12 @@ const style = createStyles({
     menuButtonContainer: {
         justifyContent: "flex-start"
     },
-    menuButton: {},
-    titleContainer: {
-        justifyContent: "center"
-    },
-    title: {
-        margin: "auto"
-    },
-    loginButtonContainer: {
-        justifyContent: "flex-end"
-    },
-    loginButton: {}
+    menuButton: { padding: 0 },
+
+    navContainer: {
+        background: "transparent",
+        boxShadow: "none"
+    }
 });
 
 export default style;

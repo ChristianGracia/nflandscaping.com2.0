@@ -25,49 +25,70 @@ class AppBar extends React.Component<AppBarProps> {
 
         return (
             <React.Fragment>
-                <BaseAppBar position="static">
+                <BaseAppBar position="static" className={classes.navContainer}>
                     <Toolbar>
                         <Grid container className={classes.gridContainer}>
-                            <Grid
-                                item
-                                xs
-                                className={classes.menuButtonContainer}
-                            >
+                            <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
                                     className={classes.menuButton}
-                                    color="secondary"
                                     variant="contained"
                                     to="/"
                                 >
-                                    <img src={img} width="200px" />
+                                    <img
+                                        src={img}
+                                        width="200px"
+                                        height="70px"
+                                    />
                                 </NavLinkButton>
                             </Grid>
-                            <Grid
-                                item
-                                container
-                                xs
-                                className={classes.titleContainer}
-                            >
-                                <Typography
-                                    variant="title"
-                                    className={classes.title}
-                                >
-                                    nflandscaping.com
-                                </Typography>
-                            </Grid>
-                            <Grid
-                                item
-                                container
-                                xs
-                                className={classes.loginButtonContainer}
-                            >
+                        </Grid>
+                        <Grid container className={classes.gridContainer}>
+                            <Grid item className={classes.menuButtonContainer}>
                                 <NavLinkButton
-                                    className={classes.loginButton}
-                                    color="secondary"
-                                    variant="contained"
-                                    to="/test"
+                                    className={classes.menuButton}
+                                    to="/"
                                 >
-                                    Test page
+                                    <Typography>Contact</Typography>
+                                </NavLinkButton>
+                            </Grid>
+                        </Grid>
+                        <Grid container className={classes.gridContainer}>
+                            <Grid item className={classes.menuButtonContainer}>
+                                <NavLinkButton
+                                    className={classes.menuButton}
+                                    to="/"
+                                >
+                                    <Typography>About Us</Typography>
+                                </NavLinkButton>
+                            </Grid>
+                        </Grid>
+                        <Grid container className={classes.gridContainer}>
+                            <Grid item className={classes.menuButtonContainer}>
+                                <NavLinkButton
+                                    className={classes.menuButton}
+                                    to="/"
+                                >
+                                    <Typography>Services</Typography>
+                                </NavLinkButton>
+                            </Grid>
+                        </Grid>
+                        <Grid container className={classes.gridContainer}>
+                            <Grid item className={classes.menuButtonContainer}>
+                                <NavLinkButton
+                                    className={classes.menuButton}
+                                    to="/"
+                                >
+                                    <Typography>Gallery</Typography>
+                                </NavLinkButton>
+                            </Grid>
+                        </Grid>
+                        <Grid container className={classes.gridContainer}>
+                            <Grid item className={classes.menuButtonContainer}>
+                                <NavLinkButton
+                                    className={classes.menuButton}
+                                    to="/"
+                                >
+                                    insta + fb
                                 </NavLinkButton>
                             </Grid>
                         </Grid>
