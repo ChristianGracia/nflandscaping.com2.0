@@ -13,10 +13,14 @@ var config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(jpg|jpeg|png|gif|ico)$/,
                 use: [
                     {
-                        loader: "file-loader"
+                        loader: "file-loader",
+                        options: {
+                            name: "images/[name].[contenthash:4].[ext]",
+                            outputPath: "images/"
+                        }
                     }
                 ]
             }
