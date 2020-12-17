@@ -28,7 +28,13 @@ class AppBar extends React.Component<AppBarProps> {
                 <BaseAppBar position="static" className={classes.navContainer}>
                     <Toolbar>
                         <Grid container className={classes.gridContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
+                            <Grid
+                                item
+                                className={classes.homeButtonContainer}
+                                xs={6}
+                                sm={3}
+                                md={2}
+                            >
                                 <NavLinkButton
                                     className={classes.menuButton}
                                     variant="contained"
@@ -41,55 +47,64 @@ class AppBar extends React.Component<AppBarProps> {
                                     />
                                 </NavLinkButton>
                             </Grid>
-                        </Grid>
-                        <Grid container className={classes.gridContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/"
+                            <Grid item className={classes.menuButtonsContainer}>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
                                 >
-                                    <Typography>Contact</Typography>
-                                </NavLinkButton>
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/"
+                                    >
+                                        <Typography>Contact</Typography>
+                                    </NavLinkButton>
+                                </Grid>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
+                                >
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/"
+                                    >
+                                        <Typography>About Us</Typography>
+                                    </NavLinkButton>
+                                </Grid>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
+                                >
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/"
+                                    >
+                                        <Typography>Services</Typography>
+                                    </NavLinkButton>
+                                </Grid>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
+                                >
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/"
+                                    >
+                                        <Typography>Gallery</Typography>
+                                    </NavLinkButton>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        <Grid container className={classes.gridContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/"
+                            <Grid item className={classes.socialMediaContainer}>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
                                 >
-                                    <Typography>About Us</Typography>
-                                </NavLinkButton>
-                            </Grid>
-                        </Grid>
-                        <Grid container className={classes.gridContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/"
-                                >
-                                    <Typography>Services</Typography>
-                                </NavLinkButton>
-                            </Grid>
-                        </Grid>
-                        <Grid container className={classes.gridContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/"
-                                >
-                                    <Typography>Gallery</Typography>
-                                </NavLinkButton>
-                            </Grid>
-                        </Grid>
-                        <Grid container className={classes.gridContainer}>
-                            <Grid item className={classes.menuButtonContainer}>
-                                <NavLinkButton
-                                    className={classes.menuButton}
-                                    to="/"
-                                >
-                                    insta + fb
-                                </NavLinkButton>
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/"
+                                    >
+                                        insta + fb
+                                    </NavLinkButton>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Toolbar>
