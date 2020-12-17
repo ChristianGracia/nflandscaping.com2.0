@@ -4,16 +4,16 @@ import { Typography } from "@material-ui/core";
 
 import { Store } from "common/redux/store";
 
-interface HomeProps {
+interface GalleryProps {
     title: string;
     updateTitle: any;
 }
 
-class Home extends React.Component<HomeProps> {
+class Gallery extends React.Component<GalleryProps> {
     public render() {
         return (
             <React.Fragment>
-                <Typography>Home page</Typography>
+                <Typography>Gallery page</Typography>
             </React.Fragment>
         );
     }
@@ -25,4 +25,4 @@ const mapStateToProps = (state: Store) => {
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Gallery);

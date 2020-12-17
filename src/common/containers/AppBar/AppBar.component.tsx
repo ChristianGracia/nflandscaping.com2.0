@@ -54,29 +54,7 @@ class AppBar extends React.Component<AppBarProps> {
                                 >
                                     <NavLinkButton
                                         className={classes.menuButton}
-                                        to="/"
-                                    >
-                                        <Typography>Contact</Typography>
-                                    </NavLinkButton>
-                                </Grid>
-                                <Grid
-                                    item
-                                    className={classes.menuButtonContainer}
-                                >
-                                    <NavLinkButton
-                                        className={classes.menuButton}
-                                        to="/"
-                                    >
-                                        <Typography>About Us</Typography>
-                                    </NavLinkButton>
-                                </Grid>
-                                <Grid
-                                    item
-                                    className={classes.menuButtonContainer}
-                                >
-                                    <NavLinkButton
-                                        className={classes.menuButton}
-                                        to="/"
+                                        to="/services"
                                     >
                                         <Typography>Services</Typography>
                                     </NavLinkButton>
@@ -87,9 +65,31 @@ class AppBar extends React.Component<AppBarProps> {
                                 >
                                     <NavLinkButton
                                         className={classes.menuButton}
-                                        to="/"
+                                        to="/gallery"
                                     >
                                         <Typography>Gallery</Typography>
+                                    </NavLinkButton>
+                                </Grid>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
+                                >
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/about"
+                                    >
+                                        <Typography>About Us</Typography>
+                                    </NavLinkButton>
+                                </Grid>
+                                <Grid
+                                    item
+                                    className={classes.menuButtonContainer}
+                                >
+                                    <NavLinkButton
+                                        className={classes.menuButton}
+                                        to="/contact"
+                                    >
+                                        <Typography>Contact</Typography>
                                     </NavLinkButton>
                                 </Grid>
                             </Grid>
