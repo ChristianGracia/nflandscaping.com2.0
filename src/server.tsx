@@ -5,8 +5,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import createEmotionServer from '@emotion/server/create-instance';
-import createEmotionCache from './createEmotionCache';
-import App from './App';
+import { createEmotionCache } from './createEmotionCache';
+// import App from './App';
 import theme from './theme';
 
 function renderFullPage(html:any, css:any) {
@@ -35,7 +35,7 @@ function handleRender(req:any, res:any) {
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        {/* <App /> */}
       </ThemeProvider>
     </CacheProvider>,
   );

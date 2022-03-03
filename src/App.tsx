@@ -4,8 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Typography } from "@mui/material";
 // import AppBar from "common/containers/AppBar/AppBar.component";
 
-export default class App extends React.Component {
-    public render() {
+export default function App() {
         return (
             <React.Fragment>
                 {/* <AppBar /> */}
@@ -15,5 +14,4 @@ export default class App extends React.Component {
         </Typography>
             </React.Fragment>
         );
-    }
 }
