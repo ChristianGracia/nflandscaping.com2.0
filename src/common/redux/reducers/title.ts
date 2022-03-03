@@ -10,9 +10,9 @@ export function changeTitle(
             return {
                 title: action.data
             };
-		}
-		default: {
-			return state;
-		}
+        }
+        default: {
+            return state;
+        }
     }
 }

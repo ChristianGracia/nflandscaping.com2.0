@@ -1,9 +1,9 @@
 import * as React from "react";
-import { withStyles } from "@material-ui/core";
-import * as Button from "@material-ui/core/Button";
+// import withStyles from '@mui/styles/withStyles';
+import * as Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 
-import style from "./NavLinkButton.style";
+// import style from "./NavLinkButton.style";
 
 interface NavLinkButtonProps extends Button.ButtonProps {
     classes: any;
@@ -31,4 +31,4 @@ class NavLinkButton extends React.Component<NavLinkButtonProps> {
     }
 }
 
-export default withStyles(style)(NavLinkButton);
+export default NavLinkButton;
