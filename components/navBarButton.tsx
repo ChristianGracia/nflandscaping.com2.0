@@ -6,7 +6,7 @@ const NavLinkButton = (props: any) => {
   return (
     <React.Fragment>
       <Link href={props.to}>
-        <Button.default>{props.children}</Button.default>
+        <a>{props.children}</a>
       </Link>
     </React.Fragment>
   );

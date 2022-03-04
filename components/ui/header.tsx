@@ -1,34 +1,43 @@
 import * as React from "react";
-import {
-  AppBar as BaseAppBar,
-  Typography,
-  Grid,
-  Toolbar,
-  withStyles,
-} from "@mui/material";
+import { AppBar as BaseAppBar, Grid, Toolbar, Typography } from "@mui/material";
 import RoomIcon from "@mui/icons-material/Room";
 import NavLinkButton from "../navBarButton";
-import Image from "next/image";
+
+const navLinks: any = {
+  services: "/services",
+  "about us": "/about",
+  gallery: "/gallery",
+  contact: "/contact",
+};
 
 const Header = () => {
+  const createNavLinks = () => {
+    return Object.keys(navLinks).map((item: string) => {
+      return (
+        <Grid item>
+          <NavLinkButton to={navLinks[item] as String}>
+            <Typography>{item}</Typography>
+          </NavLinkButton>
+        </Grid>
+      );
+    });
+  };
+
   return (
     <React.Fragment>
       <BaseAppBar position="static">
         <Toolbar>
           <Grid container>
             <Grid item xs={6} sm={3} md={2}>
-              <NavLinkButton to="/">
-                <Image src="/public/images/logo1.png" width="64" height="64" />
+              <NavLinkButton variant="contained" to="/">
+                <img src="logo1.png" width="120px" />
               </NavLinkButton>
             </Grid>
-            <Grid item>
+            {createNavLinks()}
+            {/* <Grid item>
               <RoomIcon />
-              {/* <Grid container className={classes.navToggler}>
-                                    <Grid className={classes.navToggle}></Grid>
-                                    <Grid className={classes.navToggle}></Grid>
-                                    <Grid className={classes.navToggle}></Grid>
-                                </Grid> */}
-            </Grid>
+            </Grid> */}
+
             {/* <Grid item className={classes.menuButtonsContainer}>
                                 <Grid
                                     item
