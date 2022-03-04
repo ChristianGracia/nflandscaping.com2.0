@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 
 const Services: NextPage = () => {
   return (
@@ -9,9 +9,9 @@ const Services: NextPage = () => {
         <h1>
           Welcome to <a>Services</a>
         </h1>
-        </main>
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

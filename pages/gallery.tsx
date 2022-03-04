@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 
 const Gallery: NextPage = () => {
   return (
@@ -9,9 +9,9 @@ const Gallery: NextPage = () => {
         <h1>
           Welcome to <a>Gallery</a>
         </h1>
-        </main>
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;
