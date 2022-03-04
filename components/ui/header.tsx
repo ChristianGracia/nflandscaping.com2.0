@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
 import * as React from "react";
 import { AppBar as BaseAppBar, Grid, Toolbar, Typography } from "@mui/material";
 import RoomIcon from "@mui/icons-material/Room";
 import NavLinkButton from "../navBarButton";
+import { css } from '@emotion/react'
 
 const navLinks: any = {
   Services: "services",
@@ -51,7 +53,10 @@ const Header = () => {
     <React.Fragment>
       <BaseAppBar position="static">
         <Toolbar>
-          <Grid container>
+            <Grid container css={css`
+            display: flex; 
+            justifyContent: space-between
+          `}>
             <Grid item xs={6} sm={3} md={2}>
               <NavLinkButton to="/">
                 <img src="logo1.png" width="120px" />
@@ -68,5 +73,6 @@ const Header = () => {
     </React.Fragment>
   );
 };
+
 
 export default Header;

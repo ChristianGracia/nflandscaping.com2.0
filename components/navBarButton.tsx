@@ -6,7 +6,7 @@ import { css } from '@emotion/react'
 const NavLinkButton = (props: any) => {
   return (
     <React.Fragment>
-      <Link href={props.to} as={props.to} shallow={true} >
+      <Link href={props.to} >
         <a css={css`
           textDecoration:'none';
           cursor: pointer;
