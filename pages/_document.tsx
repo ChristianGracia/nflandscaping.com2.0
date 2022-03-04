@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <title>Nature&apos;s Frontier Landscaping - Serving RI and Mass</title>
         <Head>
-          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <link rel="manifest" href="./manifest.json" />
           <meta
             name="description"
             content="Natures Frontier Landscaping - Serving RI and Mass"
