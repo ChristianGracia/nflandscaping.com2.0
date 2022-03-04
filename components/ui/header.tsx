@@ -1,10 +1,9 @@
-/** @jsxImportSource @emotion/react */
 import * as React from "react";
 import { AppBar as BaseAppBar, Grid, Toolbar, Typography } from "@mui/material";
-import RoomIcon from "@mui/icons-material/Room";
-import styled from '@emotion/styled';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import styled from "@emotion/styled";
 import NavLinkButton from "../navBarButton";
-import { css } from '@emotion/react'
 
 const navLinks: any = {
   Services: "/services",
@@ -14,55 +13,47 @@ const navLinks: any = {
 };
 
 const socialLinks: any = {
-
-  instagram: {
-    icon: 'i',
-    url: 'https://instagram.com'
+  Instagram: {
+    icon: <InstagramIcon/>,
+    url: 'https://www.instagram.com/nflandscapeconstruction/',
   },
-  facebook: {
-    icon: 'f',
-    url: 'https://facebook.com'
+  Facebook: {
+    icon: <FacebookIcon/>,
+    url: 'https://www.facebook.com/naturesfrontierlandscaping',
   },
 };
 
 const StyledNav = styled.nav`
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    a {
-        text-decoration: none;
-        color: white;
-        cursor: pointer;
-        &:hover {
-          color: grey;
-        }
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: grey;
     }
-`;
-
-const StyledSiteLinks = styled(Grid)`
+  }
+  .nav-col {
     display: flex;
     flex-direction: row;
-    margin: 0 10px;
-    width: 30%;
-`;
-
-const StyledSocialLinks = styled(Grid)`
-    display: flex;
-    flex-direction: row;
-    margin: 0 10px;
-    width: 30%;
+    .nav-item {
+      margin-right: 10px;
+    }
+  }
 `;
 
 const Header = () => {
   const createNavLinks = () => {
     return Object.keys(navLinks).map((item: string, index: number) => {
       return (
-        <StyledSiteLinks key={index} item>
+        <Grid key={index} className='nav-item' item>
           <NavLinkButton to={navLinks[item] as String}>
             <Typography>{item}</Typography>
           </NavLinkButton>
-        </StyledSiteLinks>
+        </Grid>
       );
     });
   };
@@ -70,11 +61,14 @@ const Header = () => {
   const createSocialLinks = () => {
     return Object.keys(socialLinks).map((item: string, index: number) => {
       return (
-        <StyledSocialLinks key={index} item>
-          <NavLinkButton to={socialLinks[item].url as String} className="nav-link">
-            <Typography>{socialLinks[item].icon}</Typography>
+        <Grid key={index} className='nav-item' item>
+          <NavLinkButton
+            newTab
+            to={socialLinks[item].url as String}
+          >
+            {socialLinks[item].icon}
           </NavLinkButton>
-          </StyledSocialLinks>
+        </Grid>
       );
     });
   };
@@ -83,14 +77,16 @@ const Header = () => {
     <React.Fragment>
       <BaseAppBar position="static">
         <Toolbar>
-            <Grid item xs={6} sm={3} md={2}>
-              <NavLinkButton to="/">
-                <img src="logo1.png" width="120px" />
-              </NavLinkButton>
-            </Grid>
-            <StyledNav>
-            {createNavLinks()}
-            {createSocialLinks()}
+          <Grid item xs={6} sm={3} md={2}>
+            <NavLinkButton to="/">
+              <img src="logo1.png" width="120px" />
+            </NavLinkButton>
+          </Grid>
+          <StyledNav>
+          <Grid className='nav-col' item>
+            {createNavLinks()}</Grid>
+            <Grid className='nav-col' item>
+            {createSocialLinks()}</Grid>
             {/* <Grid item>
               <RoomIcon />
             </Grid> */}
@@ -100,6 +96,5 @@ const Header = () => {
     </React.Fragment>
   );
 };
-
 
 export default Header;
