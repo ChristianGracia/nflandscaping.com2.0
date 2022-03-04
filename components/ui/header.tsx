@@ -2,12 +2,13 @@
 import * as React from "react";
 import { AppBar as BaseAppBar, Grid, Toolbar, Typography } from "@mui/material";
 import RoomIcon from "@mui/icons-material/Room";
+import styled from '@emotion/styled';
 import NavLinkButton from "../navBarButton";
 import { css } from '@emotion/react'
 
 const navLinks: any = {
-  Services: "services",
-  "About Us": "about",
+  Services: "/services",
+  "About Us": "/about",
   Gallery: "/gallery",
   Contact: "/contact",
 };
@@ -24,15 +25,44 @@ const socialLinks: any = {
   },
 };
 
+const StyledNav = styled.nav`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          color: grey;
+        }
+    }
+`;
+
+const StyledSiteLinks = styled(Grid)`
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+    width: 30%;
+`;
+
+const StyledSocialLinks = styled(Grid)`
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+    width: 30%;
+`;
+
 const Header = () => {
   const createNavLinks = () => {
     return Object.keys(navLinks).map((item: string, index: number) => {
       return (
-        <Grid key={index} item>
+        <StyledSiteLinks key={index} item>
           <NavLinkButton to={navLinks[item] as String}>
             <Typography>{item}</Typography>
           </NavLinkButton>
-        </Grid>
+        </StyledSiteLinks>
       );
     });
   };
@@ -40,11 +70,11 @@ const Header = () => {
   const createSocialLinks = () => {
     return Object.keys(socialLinks).map((item: string, index: number) => {
       return (
-        <Grid key={index} item>
-          <NavLinkButton to={socialLinks[item].url as String}>
+        <StyledSocialLinks key={index} item>
+          <NavLinkButton to={socialLinks[item].url as String} className="nav-link">
             <Typography>{socialLinks[item].icon}</Typography>
           </NavLinkButton>
-        </Grid>
+          </StyledSocialLinks>
       );
     });
   };
@@ -53,21 +83,18 @@ const Header = () => {
     <React.Fragment>
       <BaseAppBar position="static">
         <Toolbar>
-            <Grid container css={css`
-            display: flex; 
-            justifyContent: space-between
-          `}>
             <Grid item xs={6} sm={3} md={2}>
               <NavLinkButton to="/">
                 <img src="logo1.png" width="120px" />
               </NavLinkButton>
             </Grid>
+            <StyledNav>
             {createNavLinks()}
             {createSocialLinks()}
             {/* <Grid item>
               <RoomIcon />
             </Grid> */}
-          </Grid>
+          </StyledNav>
         </Toolbar>
       </BaseAppBar>
     </React.Fragment>
