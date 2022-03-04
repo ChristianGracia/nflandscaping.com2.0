@@ -75,12 +75,13 @@ const StyledNav = styled.nav`
 `;
 
 const Header = () => {
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,
     right: false,
   });
+  const [checker, setChecker] = useState("666")
 
   const toggleDrawer = (anchor: any, open: any) => (event: any) => {
     console.log("opening");
@@ -152,7 +153,9 @@ const Header = () => {
 
   const test = () => {
     console.log("test2");
+    setChecker('333');
   };
+
 
   return (
     <React.Fragment>
@@ -170,9 +173,9 @@ const Header = () => {
             <Grid className="nav-col" item>
               {createSocialLinks()}
             </Grid>
-            <Button onClick={test}>test</Button>
+            <Button onClick={test}>{checker}</Button>
             {
-              <Grid className="menu-icon" item>
+              <Grid className="menu-icon"  item>
                 {/* <Button onClick={()=>toggleDrawer('left', true)}>{<MenuIcon />}</Button>
                    <SwipeableDrawer
                    anchor={'left'}
@@ -183,7 +186,7 @@ const Header = () => {
                    {list('left')}
                  </SwipeableDrawer> */}
 
-                {["left", "right", "top", "bottom"].map((anchor: string) => (
+                {/* {["left", "right", "top", "bottom"].map((anchor: string) => (
                   <React.Fragment key={anchor}>
                     <Button onClick={() => toggleDrawer(anchor, true)}>
                       {anchor}
@@ -197,10 +200,10 @@ const Header = () => {
                       {list(anchor)}
                     </SwipeableDrawer>
                   </React.Fragment>
-                ))}
-                {/* <NavLinkButton to="/">
-                  <MenuIcon />
-                </NavLinkButton> */}
+                ))} */}
+            
+                  <MenuIcon   onClick={()=> console.log(true)}/>
+             
               </Grid>
             }
           </StyledNav>
