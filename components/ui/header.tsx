@@ -6,13 +6,11 @@ import {
     Toolbar,
     withStyles
 } from "@mui/material";
-
 import RoomIcon from '@mui/icons-material/Room';
-
-
+import NavLinkButton from "../navBarButton";
+import Image from 'next/image'
 
 const Header = () => {
-
         return (
             <React.Fragment>
                 <BaseAppBar position="static">
@@ -25,16 +23,13 @@ const Header = () => {
                                 sm={3}
                                 md={2}
                             >
-                                {/* <NavLinkButton
-                                    className={classes.menuButton}
-                                    variant="contained"
+                                <NavLinkButton
                                     to="/"
                                 >
-                                    <img
-                                        className={classes.logoImage}
-                                        src={img}
+                                   <Image
+                                        src="/public/images/logo1.png" width="64" height="64"
                                     />
-                                </NavLinkButton> */}
+                                </NavLinkButton>
                             </Grid>
                             <Grid item >
                             <RoomIcon />
