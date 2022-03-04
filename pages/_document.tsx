@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <title>Nature's Frontier Landscaping - Serving RI and Mass</title>
+        <title>Nature&apos;s Frontier Landscaping - Serving RI and Mass</title>
         <Head>
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
           <meta

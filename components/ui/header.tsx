@@ -12,9 +12,9 @@ const navLinks: any = {
 
 const Header = () => {
   const createNavLinks = () => {
-    return Object.keys(navLinks).map((item: string) => {
+    return Object.keys(navLinks).map((item: string, index: number) => {
       return (
-        <Grid item>
+        <Grid key={index} item>
           <NavLinkButton to={navLinks[item] as String}>
             <Typography>{item}</Typography>
           </NavLinkButton>
