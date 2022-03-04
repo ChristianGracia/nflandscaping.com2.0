@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const Contact: NextPage = () => {
   return (
-    <div >
+    <div>
       <main>
         <h1>
           Welcome to <a>Contact</a>

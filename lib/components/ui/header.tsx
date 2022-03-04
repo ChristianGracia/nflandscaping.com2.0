@@ -5,16 +5,16 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import MenuIcon from "@mui/icons-material/Menu";
 import styled from "@emotion/styled";
 import NavLinkButton from "../navBarButton";
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
 const navLinks: any = {
   Services: "/services",
@@ -82,12 +82,12 @@ const Header = () => {
     right: false,
   });
 
-  const toggleDrawer = (anchor: any, open:any) => (event:any) => {
-    console.log('opening')
+  const toggleDrawer = (anchor: any, open: any) => (event: any) => {
+    console.log("opening");
     if (
       event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
@@ -97,13 +97,13 @@ const Header = () => {
 
   const list = (anchor: string) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -114,7 +114,7 @@ const Header = () => {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -125,7 +125,7 @@ const Header = () => {
       </List>
     </Box>
   );
-  
+
   const createNavLinks = () => {
     return Object.keys(navLinks).map((item: string, index: number) => {
       return (
@@ -151,8 +151,8 @@ const Header = () => {
   };
 
   const test = () => {
-    console.log('test2')
-  }
+    console.log("test2");
+  };
 
   return (
     <React.Fragment>
@@ -173,7 +173,7 @@ const Header = () => {
             <Button onClick={test}>test</Button>
             {
               <Grid className="menu-icon" item>
-                 {/* <Button onClick={()=>toggleDrawer('left', true)}>{<MenuIcon />}</Button>
+                {/* <Button onClick={()=>toggleDrawer('left', true)}>{<MenuIcon />}</Button>
                    <SwipeableDrawer
                    anchor={'left'}
                    open={state['left']}
@@ -182,20 +182,22 @@ const Header = () => {
                  >
                    {list('left')}
                  </SwipeableDrawer> */}
-              
-                  {['left', 'right', 'top', 'bottom'].map((anchor: string) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={() => toggleDrawer(anchor, true)}>{anchor}</Button>
-          <SwipeableDrawer
-            anchor="left"
-            open={state['left']}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
-          >
-            {list(anchor)}
-          </SwipeableDrawer>
-        </React.Fragment>
-      ))}
+
+                {["left", "right", "top", "bottom"].map((anchor: string) => (
+                  <React.Fragment key={anchor}>
+                    <Button onClick={() => toggleDrawer(anchor, true)}>
+                      {anchor}
+                    </Button>
+                    <SwipeableDrawer
+                      anchor="left"
+                      open={state["left"]}
+                      onClose={toggleDrawer(anchor, false)}
+                      onOpen={toggleDrawer(anchor, true)}
+                    >
+                      {list(anchor)}
+                    </SwipeableDrawer>
+                  </React.Fragment>
+                ))}
                 {/* <NavLinkButton to="/">
                   <MenuIcon />
                 </NavLinkButton> */}
