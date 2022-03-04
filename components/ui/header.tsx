@@ -4,8 +4,8 @@ import RoomIcon from "@mui/icons-material/Room";
 import NavLinkButton from "../navBarButton";
 
 const navLinks: any = {
-  services: "/services",
-  "about us": "/about",
+  services: "services",
+  "about us": "about",
   gallery: "/gallery",
   contact: "/contact",
 };
