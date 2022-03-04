@@ -14,13 +14,13 @@ const navLinks: any = {
 };
 
 const socialLinks: any = {
-  Instagram: {
-    icon: <InstagramIcon />,
-    url: "https://www.instagram.com/nflandscapeconstruction/",
-  },
   Facebook: {
     icon: <FacebookIcon />,
     url: "https://www.facebook.com/naturesfrontierlandscaping",
+  },
+  Instagram: {
+    icon: <InstagramIcon />,
+    url: "https://www.instagram.com/nflandscapeconstruction/",
   },
 };
 
