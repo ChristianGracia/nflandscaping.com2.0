@@ -81,7 +81,7 @@ const Header = () => {
     bottom: false,
     right: false,
   });
-  const [checker, setChecker] = useState("666")
+  const [checker, setChecker] = useState("666");
 
   const toggleDrawer = (anchor: any, open: any) => (event: any) => {
     console.log("opening");
@@ -153,9 +153,8 @@ const Header = () => {
 
   const test = () => {
     console.log("test2");
-    setChecker('333');
+    setChecker("333");
   };
-
 
   return (
     <React.Fragment>
@@ -175,7 +174,7 @@ const Header = () => {
             </Grid>
             <Button onClick={test}>{checker}</Button>
             {
-              <Grid className="menu-icon"  item>
+              <Grid className="menu-icon" item>
                 {/* <Button onClick={()=>toggleDrawer('left', true)}>{<MenuIcon />}</Button>
                    <SwipeableDrawer
                    anchor={'left'}
@@ -201,9 +200,8 @@ const Header = () => {
                     </SwipeableDrawer>
                   </React.Fragment>
                 ))} */}
-            
-                  <MenuIcon   onClick={()=> console.log(true)}/>
-             
+
+                <MenuIcon onClick={() => console.log(true)} />
               </Grid>
             }
           </StyledNav>
