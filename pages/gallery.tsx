@@ -31,14 +31,14 @@ const Gallery: NextPage = () => {
   const [showSelectionButtons, setShowSelectionButtons] =
     useState<boolean>(true);
 
-    const selectService = (title: string) => {
-      if (title === "Landscaping / Construction") {
-        setShowLandscapingImages(true);
-      } else if (title === "Home Improvement") {
-        setShowHomeImpImages(true);
-      }
-      setShowSelectionButtons(false);
+  const selectService = (title: string) => {
+    if (title === "Landscaping / Construction") {
+      setShowLandscapingImages(true);
+    } else if (title === "Home Improvement") {
+      setShowHomeImpImages(true);
     }
+    setShowSelectionButtons(false);
+  };
 
   const renderServiceCard = (title: string) => {
     return (
@@ -56,17 +56,19 @@ const Gallery: NextPage = () => {
     setShowLandscapingImages(false);
     setShowHomeImpImages(false);
     setShowSelectionButtons(true);
-  }
+  };
   return (
     <div>
       <main>
         <PageHeader title="Before & After" />
         {showSelectionButtons ? (
           <>
-           {renderServiceCard("Landscaping / Construction")}
-          {renderServiceCard("Home Improvement")}
+            {renderServiceCard("Landscaping / Construction")}
+            {renderServiceCard("Home Improvement")}
           </>
-        ) : <Button onClick={handleBackButton}>Back</Button>}
+        ) : (
+          <Button onClick={handleBackButton}>Back</Button>
+        )}
         {showHomeImpImages && (
           <ImageGrid
             prepend={"images/gallery/"}
