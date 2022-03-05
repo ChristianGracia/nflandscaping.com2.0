@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -22,7 +22,7 @@ const ContactForm = (props: any) => {
 
     if (submitted.status === 204) {
       setFormSubmitted(true);
-      console.log('true');
+      console.log("true");
     } else {
       setFormError(true);
     }
@@ -30,48 +30,50 @@ const ContactForm = (props: any) => {
 
   const renderTextInput = () => {
     return (
-      <> <TextField
-      id="name-input"
-      label="Name"
-      type="text"
-      autoComplete="name"
-      variant="standard"
-      onChange={(e: any) => setNameValue(e.target.value)}
-    />
-    <TextField
-      id="phone-input"
-      label="Phone Number"
-      type="text"
-      autoComplete="phone"
-      variant="standard"
-      onChange={(e: any) => setPhoneValue(e.target.value)}
-    />
-    <TextField
-      id="phone-input"
-      label="Message"
-      type="text"
-      variant="standard"
-      onChange={(e: any) => setMessageValue(e.target.value)}
-    />
-    <Button
-      disabled={!nameValue || !phoneValue || !messageValue}
-      type="submit"
-      variant="contained"
-      className="contact-submit-button"
-    >
-      Submit
-    </Button></>
-    )
-  }
+      <>
+        {" "}
+        <TextField
+          id="name-input"
+          label="Name"
+          type="text"
+          autoComplete="name"
+          variant="standard"
+          onChange={(e: any) => setNameValue(e.target.value)}
+        />
+        <TextField
+          id="phone-input"
+          label="Phone Number"
+          type="text"
+          autoComplete="phone"
+          variant="standard"
+          onChange={(e: any) => setPhoneValue(e.target.value)}
+        />
+        <TextField
+          id="phone-input"
+          label="Message"
+          type="text"
+          variant="standard"
+          onChange={(e: any) => setMessageValue(e.target.value)}
+        />
+        <Button
+          disabled={!nameValue || !phoneValue || !messageValue}
+          type="submit"
+          variant="contained"
+          className="contact-submit-button"
+        >
+          Submit
+        </Button>
+      </>
+    );
+  };
 
   const renderErrorMessage = () => {
-    return (<p>Error sending message</p>);
-  }
+    return <p>Error sending message</p>;
+  };
 
   const renderSuccessMessage = () => {
-    return (<p>Message Received!</p>);
-  }
-
+    return <p>Message Received!</p>;
+  };
 
   return (
     <Box
@@ -86,9 +88,11 @@ const ContactForm = (props: any) => {
       alignItems="center"
       onSubmit={submitForm}
     >
-      {!formSubmitted ? (
-       renderTextInput()
-      ) : formError ? renderErrorMessage() : renderSuccessMessage() }
+      {!formSubmitted
+        ? renderTextInput()
+        : formError
+        ? renderErrorMessage()
+        : renderSuccessMessage()}
     </Box>
   );
 };

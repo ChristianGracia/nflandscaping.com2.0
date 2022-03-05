@@ -1,9 +1,9 @@
-import React from "react";
+import { Fragment } from "react";
 const Footer = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <p>tbd</p>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

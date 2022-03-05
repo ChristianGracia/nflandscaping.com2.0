@@ -1,10 +1,10 @@
-import React from "react";
+import { Fragment } from "react";
 
 const ServiceCard = (props: any) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <p>{props.item.title}</p>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

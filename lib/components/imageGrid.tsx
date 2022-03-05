@@ -1,21 +1,23 @@
 import Grid from "@mui/material/Grid";
-import React from "react";
 
 interface ImageGridProps {
-    images: string[],
-    prepend: string
+  images: string[];
+  prepend: string;
 }
 
 const ImageGrid = (props: ImageGridProps) => {
   return (
     <>
-    <Grid container>
+      <Grid container>
         {props.images.map((item: string, index: number) => {
-            return (<Grid key={index} item>
-                <img src={`${props.prepend}${item}`} alt="gallery image" />
-            </Grid>)
+          return (
+            <Grid key={index} item>
+              <img src={`${props.prepend}${item}`} alt="gallery image" />
+            </Grid>
+          );
         })}
-    </Grid></>
+      </Grid>
+    </>
   );
 };
 
