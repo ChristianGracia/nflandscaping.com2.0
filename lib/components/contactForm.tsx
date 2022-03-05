@@ -22,6 +22,7 @@ const ContactForm = (props: any) => {
 
     if (submitted.status === 204) {
       setFormSubmitted(true);
+      console.log('true');
     } else {
       setFormError(true);
     }
@@ -64,11 +65,11 @@ const ContactForm = (props: any) => {
   }
 
   const renderErrorMessage = () => {
-    return (<p>Error</p>);
+    return (<p>Error sending message</p>);
   }
 
   const renderSuccessMessage = () => {
-    return (<p>Error</p>);
+    return (<p>Message Received!</p>);
   }
 
 

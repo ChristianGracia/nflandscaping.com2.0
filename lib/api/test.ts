@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
-  test: Boolean;
+  test: boolean;
 };
 
 export default function handler(
