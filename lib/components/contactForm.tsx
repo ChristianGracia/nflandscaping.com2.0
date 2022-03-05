@@ -1,14 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import Box from "@mui/material/Box";
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 
 
 const ContactForm = (props: any)  => {
+  const [nameValue, setNameValue] = useState<string>("");
+  const [phoneValue, setPhoneValue] = useState<string>("");
+  const [messageValue, setMessageValue] = useState<string>("");
   const submitForm = (e: any) => {
     e.preventDefault();
-    console.log(e)
+    const data = {
+      name: nameValue,
+      phone: phoneValue,
+      message: messageValue
+    }
+    console.log(data)
   }
+
   return (
     <Box
       component="form"
@@ -26,6 +35,7 @@ const ContactForm = (props: any)  => {
         type="text"
         autoComplete="name"
         variant="standard"
+        onChange={(e: any) => setNameValue(e.target.value)}
       />
       <TextField
         id="phone-input"
@@ -33,14 +43,18 @@ const ContactForm = (props: any)  => {
         type="text"
         autoComplete="phone"
         variant="standard"
+        onChange={(e: any) => setPhoneValue(e.target.value)}
       />
        <TextField
         id="phone-input"
         label="Message"
         type="text"
         variant="standard"
+        onChange={(e: any) => setMessageValue(e.target.value)}
       />
-       <Button type="submit" variant="contained" className="contact-submit-button">
+       <Button 
+       disabled={!nameValue || !phoneValue || !messageValue} 
+       type="submit" variant="contained" className="contact-submit-button">
           Submit
         </Button>
   </Box>
