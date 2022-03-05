@@ -65,12 +65,12 @@ const Constants = {
       image: "Consulting",
     },
     {
-      title: "Fencing",
-      image: "fencing.jpg",
-    },
-    {
       title: "Irrigation",
       image: "irrigation.jpg",
+    },
+    {
+      title: "Fencing",
+      image: "fencing.jpg",
     },
     {
       title: "Home Improvement",

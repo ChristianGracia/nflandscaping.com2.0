@@ -12,7 +12,7 @@ import CarouselSlide from "../lib/components/carouselSlide";
 // import image5 from "../public/images/homeBackground5.jpg";
 
 const Home: NextPage = () => {
-  var carouselSlides = Constants.CAROUSEL_SLIDES;
+  const carouselSlides = Constants.CAROUSEL_SLIDES;
   const CarouselContainer = styled.div``;
   return (
     <CarouselContainer>
