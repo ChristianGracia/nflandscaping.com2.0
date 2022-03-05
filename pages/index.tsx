@@ -15,13 +15,17 @@ const Home: NextPage = () => {
   const carouselSlides = Constants.CAROUSEL_SLIDES;
   const CarouselContainer = styled.div``;
   return (
-    <CarouselContainer>
-      <Carousel>
-        {carouselSlides.map((item, i) => (
-          <CarouselSlide key={i} item={item} />
-        ))}
-      </Carousel>
-    </CarouselContainer>
+    <div>
+      <main>
+        <CarouselContainer>
+          <Carousel>
+            {carouselSlides.map((item, i) => (
+              <CarouselSlide key={i} item={item} />
+            ))}
+          </Carousel>
+        </CarouselContainer>
+      </main>
+    </div>
   );
 };
 
