@@ -1,9 +1,14 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import TextField from '@mui/material/TextField';
+import Button from "@mui/material/Button";
 
 
 const ContactForm = (props: any)  => {
+  const submitForm = (e: any) => {
+    e.preventDefault();
+    console.log(e)
+  }
   return (
     <Box
       component="form"
@@ -12,7 +17,8 @@ const ContactForm = (props: any)  => {
       }}
       noValidate
       autoComplete="off"
-      display="flex" flexDirection="column" alignItems="center" 
+      display="flex" flexDirection="column" alignItems="center"
+      onSubmit={submitForm}
     >
       <TextField
         id="name-input"
@@ -34,6 +40,9 @@ const ContactForm = (props: any)  => {
         type="text"
         variant="standard"
       />
+       <Button type="submit" variant="contained" className="contact-submit-button">
+          Submit
+        </Button>
   </Box>
   );
 };

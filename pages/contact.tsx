@@ -1,3 +1,5 @@
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import type { NextPage } from "next";
 import ContactForm from "../lib/components/contactForm";
 import PageHeader from "../lib/components/pageHeader";
@@ -8,9 +10,11 @@ const Contact: NextPage = () => {
     <div>
       <main>
         <PageHeader title="Contact Us"/>
-        <p>{Constants.PHONE_NUMBER}</p>
-        <p>{Constants.EMAIL}</p>
-        <p>Available 24/7</p>
+        <Box display="flex" flexDirection="column" alignItems="center" >
+          <Typography component="p">{Constants.PHONE_NUMBER}</Typography>
+          <Typography component="p">{Constants.EMAIL}</Typography>
+          <Typography component="p">Available 24/7</Typography>
+        </Box>
         <ContactForm />
       </main>
     </div>
