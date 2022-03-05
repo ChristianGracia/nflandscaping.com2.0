@@ -8,7 +8,7 @@ const Services: NextPage = () => {
   return (
     <div>
       <main>
-        <PageHeader title="Services"/>
+        <PageHeader title="Services" />
 
         {services.map((item, i) => (
           <ServiceCard key={i} item={item} />

@@ -1,6 +1,10 @@
 const Constants = {
   PHONE_NUMBER: "401-447-5446",
   EMAIL: "naturesfrontierlandscaping@gmail.com",
+  API_URL: "https://christiangracia-api.herokuapp.com/",
+  LOCAL_API_URL: "http://localhost:3000/",
+  STAGING_API_URL: "http://christiangracia-api-staging.herokuapp.com/",
+  PROD_API_URL: "https://christiangracia-api.herokuapp.com/",
   // HOME PAGE
   CAROUSEL_SLIDES: [
     {

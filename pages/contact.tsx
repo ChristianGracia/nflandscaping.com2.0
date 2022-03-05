@@ -9,8 +9,8 @@ const Contact: NextPage = () => {
   return (
     <div>
       <main>
-        <PageHeader title="Contact Us"/>
-        <Box display="flex" flexDirection="column" alignItems="center" >
+        <PageHeader title="Contact Us" />
+        <Box display="flex" flexDirection="column" alignItems="center">
           <Typography component="p">{Constants.PHONE_NUMBER}</Typography>
           <Typography component="p">{Constants.EMAIL}</Typography>
           <Typography component="p">Available 24/7</Typography>

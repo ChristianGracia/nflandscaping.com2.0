@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { AppBar as BaseAppBar, Grid, Toolbar, Typography } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -157,7 +157,7 @@ const Header = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <BaseAppBar color="transparent" elevation={0} position="static">
         <Toolbar>
           <Grid item xs={6} sm={3} md={2}>
@@ -207,7 +207,7 @@ const Header = () => {
           </StyledNav>
         </Toolbar>
       </BaseAppBar>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
