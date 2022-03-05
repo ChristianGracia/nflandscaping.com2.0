@@ -5,7 +5,7 @@ interface PageHeaderProps {
   title: string;
 }
 
-const PageHeader = ({title} : PageHeaderProps) => {
+const PageHeader = ({ title }: PageHeaderProps) => {
   const StyledContainer = styled.div`
     color: black;
     font-weight: bold;

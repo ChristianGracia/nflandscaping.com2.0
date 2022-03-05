@@ -1,8 +1,9 @@
+import Typography from "@mui/material/Typography";
 import { Fragment } from "react";
 const Footer = () => {
   return (
     <Fragment>
-      <p>tbd</p>
+      <Typography component="p">tbd</Typography>
     </Fragment>
   );
 };

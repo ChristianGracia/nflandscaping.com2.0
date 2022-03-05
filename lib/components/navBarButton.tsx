@@ -2,12 +2,12 @@ import { Fragment } from "react";
 import Link from "next/link";
 
 interface NavLinkButtonProps {
-  to: string,
-  newTab: boolean,
-  children: any,
+  to: string;
+  newTab: boolean;
+  children: any;
 }
 
-const NavLinkButton = ({to, children, newTab } : NavLinkButtonProps) => {
+const NavLinkButton = ({ to, children, newTab }: NavLinkButtonProps) => {
   return (
     <Fragment>
       <Link href={to} as={to} shallow>

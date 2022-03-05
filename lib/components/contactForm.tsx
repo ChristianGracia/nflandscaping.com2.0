@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import SendEmail from "../services/emailService";
 
 const ContactForm = (props: any) => {
@@ -68,11 +69,11 @@ const ContactForm = (props: any) => {
   };
 
   const renderErrorMessage = () => {
-    return <p>Error sending message</p>;
+    return <Typography component="p">Error sending message</Typography>;
   };
 
   const renderSuccessMessage = () => {
-    return <p>Message Received!</p>;
+    return <Typography component="p">Message Received!</Typography>;
   };
 
   return (

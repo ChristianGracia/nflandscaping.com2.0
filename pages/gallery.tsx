@@ -74,7 +74,9 @@ const Gallery: NextPage = () => {
           }
         />
         {showSelectionButtons ? (
-          serviceCards.map((item: string, index: number) => renderServiceCard(item, index))
+          serviceCards.map((item: string, index: number) =>
+            renderServiceCard(item, index)
+          )
         ) : (
           <Button onClick={handleBackButton}>Back</Button>
         )}

@@ -1,17 +1,18 @@
+import Typography from "@mui/material/Typography";
 import { Fragment } from "react";
 
 interface Item {
-  title: string
+  title: string;
 }
 
 interface ServiceCardProps {
-  item: Item
+  item: Item;
 }
 
-const ServiceCard = ({item }: ServiceCardProps) => {
+const ServiceCard = ({ item }: ServiceCardProps) => {
   return (
     <Fragment>
-      <p>{item.title}</p>
+      <Typography component="p">{item.title}</Typography>
     </Fragment>
   );
 };
