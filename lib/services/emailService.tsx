@@ -7,7 +7,6 @@ interface EmailBodyProps {
 }
 
 const sendEmail = async (emailBody: EmailBodyProps) => {
-    console.log(emailBody)
   const response = await fetch(`${Constants.PROD_API_URL}email/send-email-nfl`, {
     method: "POST",
     body: JSON.stringify(emailBody),
@@ -15,6 +14,6 @@ const sendEmail = async (emailBody: EmailBodyProps) => {
         'Content-Type': 'application/json'
     },
   });
-  return response.json();
+  return response;
 };
 export default sendEmail;

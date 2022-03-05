@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -8,6 +8,8 @@ const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
   const [messageValue, setMessageValue] = useState<string>("");
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [formError, setFormError] = useState<boolean>(false);
   const submitForm = async (e: any) => {
     e.preventDefault();
     const data = {
@@ -15,9 +17,60 @@ const ContactForm = (props: any) => {
       phone: phoneValue,
       message: messageValue,
     };
-    const emailSent = await SendEmail(data);
-    console.log(emailSent);
+    const submitted = await SendEmail(data);
+    console.log(submitted);
+
+    if (submitted.status === 204) {
+      setFormSubmitted(true);
+    } else {
+      setFormError(true);
+    }
   };
+
+  const renderTextInput = () => {
+    return (
+      <> <TextField
+      id="name-input"
+      label="Name"
+      type="text"
+      autoComplete="name"
+      variant="standard"
+      onChange={(e: any) => setNameValue(e.target.value)}
+    />
+    <TextField
+      id="phone-input"
+      label="Phone Number"
+      type="text"
+      autoComplete="phone"
+      variant="standard"
+      onChange={(e: any) => setPhoneValue(e.target.value)}
+    />
+    <TextField
+      id="phone-input"
+      label="Message"
+      type="text"
+      variant="standard"
+      onChange={(e: any) => setMessageValue(e.target.value)}
+    />
+    <Button
+      disabled={!nameValue || !phoneValue || !messageValue}
+      type="submit"
+      variant="contained"
+      className="contact-submit-button"
+    >
+      Submit
+    </Button></>
+    )
+  }
+
+  const renderErrorMessage = () => {
+    return (<p>Error</p>);
+  }
+
+  const renderSuccessMessage = () => {
+    return (<p>Error</p>);
+  }
+
 
   return (
     <Box
@@ -32,37 +85,9 @@ const ContactForm = (props: any) => {
       alignItems="center"
       onSubmit={submitForm}
     >
-      <TextField
-        id="name-input"
-        label="Name"
-        type="text"
-        autoComplete="name"
-        variant="standard"
-        onChange={(e: any) => setNameValue(e.target.value)}
-      />
-      <TextField
-        id="phone-input"
-        label="Phone Number"
-        type="text"
-        autoComplete="phone"
-        variant="standard"
-        onChange={(e: any) => setPhoneValue(e.target.value)}
-      />
-      <TextField
-        id="phone-input"
-        label="Message"
-        type="text"
-        variant="standard"
-        onChange={(e: any) => setMessageValue(e.target.value)}
-      />
-      <Button
-        disabled={!nameValue || !phoneValue || !messageValue}
-        type="submit"
-        variant="contained"
-        className="contact-submit-button"
-      >
-        Submit
-      </Button>
+      {!formSubmitted ? (
+       renderTextInput()
+      ) : formError ? renderErrorMessage() : renderSuccessMessage() }
     </Box>
   );
 };
