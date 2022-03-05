@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
+import PageHeader from "../lib/components/pageHeader";
 
 const About: NextPage = () => {
   return (
     <div>
       <main>
-        <h1>
-          Welcome to <a>About</a>
-        </h1>
+        <PageHeader title="About Us"/>
       </main>
     </div>
   );
