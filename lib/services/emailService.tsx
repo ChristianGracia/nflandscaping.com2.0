@@ -7,7 +7,8 @@ interface EmailBodyProps {
 }
 
 const sendEmail = async (emailBody: EmailBodyProps) => {
-  const response = await fetch(`${Constants.API_URL}email/send-email-nfl`, {
+    console.log(emailBody)
+  const response = await fetch(`${Constants.LOCAL_API_URL}email/send-email-nfl`, {
     method: "POST",
     body: JSON.stringify(emailBody),
   });
