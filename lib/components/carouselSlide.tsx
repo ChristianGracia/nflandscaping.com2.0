@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 
 const CarouselSlide = (props: any) => {
-    const ImageContainer = styled.div`
+  const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(/images/${props.item.image});
@@ -19,12 +19,17 @@ const CarouselSlide = (props: any) => {
   return (
     <ImageContainer>
       <h2>{props.item.title}</h2>
-      {props.item.description && (<p>{props.item.description}</p>)}
+      {props.item.description && <p>{props.item.description}</p>}
 
-      <div className='button-div'>
-        <Button variant='contained' className="image-button callButton">401-447-5446</Button>
-        <Button  variant='contained' className="image-button estimateButton">Free Estimate</Button>
+      <div className="button-div">
+        <Button variant="contained" className="image-button callButton">
+          401-447-5446
+        </Button>
+        <Button variant="contained" className="image-button estimateButton">
+          Free Estimate
+        </Button>
       </div>
+      <p>0% In-house Financing Available</p>
     </ImageContainer>
   );
 };
