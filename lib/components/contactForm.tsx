@@ -2,20 +2,22 @@ import React, {useState} from "react";
 import Box from "@mui/material/Box";
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
+import SendEmail from '../services/emailService';
 
 
 const ContactForm = (props: any)  => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
   const [messageValue, setMessageValue] = useState<string>("");
-  const submitForm = (e: any) => {
+  const submitForm = async (e: any) => {
     e.preventDefault();
     const data = {
       name: nameValue,
       phone: phoneValue,
       message: messageValue
     }
-    console.log(data)
+    const emailSent = await SendEmail(data);
+    console.log(emailSent);
   }
 
   return (
