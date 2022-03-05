@@ -1,6 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
+import Constants from "../utility/constants";
 
 const CarouselSlide = (props: any) => {
   const ImageContainer = styled.div`
@@ -18,12 +19,12 @@ const CarouselSlide = (props: any) => {
   `;
   return (
     <ImageContainer>
-      <h2>{props.item.title}</h2>
+      {/* <p>{props.item.title}</p> */}
       {props.item.description && <p>{props.item.description}</p>}
 
       <div className="button-div">
         <Button variant="contained" className="image-button callButton">
-          401-447-5446
+          {Constants.PHONE_NUMBER}
         </Button>
         <Button variant="contained" className="image-button estimateButton">
           Free Estimate

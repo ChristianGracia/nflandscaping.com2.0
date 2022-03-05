@@ -172,7 +172,7 @@ const Header = () => {
             <Grid className="nav-col" item>
               {createSocialLinks()}
             </Grid>
-            <Button onClick={test}>{checker}</Button>
+            {/* <Button onClick={test}>{checker}</Button> */}
             {
               <Grid className="menu-icon" item>
                 {/* <Button onClick={()=>toggleDrawer('left', true)}>{<MenuIcon />}</Button>

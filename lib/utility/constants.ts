@@ -1,4 +1,5 @@
 const Constants = {
+  PHONE_NUMBER: "401-447-5446",
   // HOME PAGE
   CAROUSEL_SLIDES: [
     {
@@ -30,6 +31,52 @@ const Constants = {
     },
   ],
   //SERVICES
+  SERVICES: [
+    {
+      title: "Demolition",
+      image: "demolition.jpg",
+    },
+    {
+      title: "Full Landscaping Services",
+      image: "landscaping-service.jpg",
+    },
+    {
+      title: "Property Management",
+      image: "property-management.jpg",
+    },
+    {
+      title: "Snow Removal",
+      image: "snow-removal.jpg",
+    },
+    {
+      title: "Trash Removal / Estate Cleanout",
+      image: "trash.jpg",
+    },
+    {
+      title: "Bobcat Services",
+      image: "bobcat.jpg",
+    },
+    {
+      title: "Power Washing",
+      image: "powerwashing.jpg",
+    },
+    {
+      title: "consulting.jpg",
+      image: "Consulting",
+    },
+    {
+      title: "Fencing",
+      image: "fencing.jpg",
+    },
+    {
+      title: "Irrigation",
+      image: "irrigation.jpg",
+    },
+    {
+      title: "Home Improvement",
+      image: "home-improvement.jpeg",
+    },
+  ],
 
   // ABOUT PAGE
   CUT_CORNER_TEXT: "We don't cut corners, just wood.",

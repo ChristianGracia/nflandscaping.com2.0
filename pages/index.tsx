@@ -13,19 +13,15 @@ import CarouselSlide from "../lib/components/carouselSlide";
 
 const Home: NextPage = () => {
   var carouselSlides = Constants.CAROUSEL_SLIDES;
+  const CarouselContainer = styled.div``;
   return (
-    <div>
-      <main>
-        <h1>
-          Welcome to <a>Home</a>
-        </h1>
-        <Carousel>
-          {carouselSlides.map((item, i) => (
-            <CarouselSlide key={i} item={item} />
-          ))}
-        </Carousel>
-      </main>
-    </div>
+    <CarouselContainer>
+      <Carousel>
+        {carouselSlides.map((item, i) => (
+          <CarouselSlide key={i} item={item} />
+        ))}
+      </Carousel>
+    </CarouselContainer>
   );
 };
 
