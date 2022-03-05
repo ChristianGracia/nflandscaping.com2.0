@@ -1,13 +1,21 @@
-import * as React from "react";
+
 import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import Constants from "../utility/constants";
 
-const CarouselSlide = (props: any) => {
+interface Item {
+  image: string,
+  description: string,
+}
+interface CarouselSlideProps {
+  item: Item
+}
+
+const CarouselSlide = ({item}: CarouselSlideProps) => {
   const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url(/images/${props.item.image});
+    background-image: url(/images/${item.image});
     .button-div {
       display: flex;
       flex-direction: row;
@@ -20,7 +28,7 @@ const CarouselSlide = (props: any) => {
   return (
     <ImageContainer>
       {/* <p>{props.item.title}</p> */}
-      {props.item.description && <p>{props.item.description}</p>}
+      {item.description && <p>{item.description}</p>}
 
       <div className="button-div">
         <Button variant="contained" className="image-button callButton">

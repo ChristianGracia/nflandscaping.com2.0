@@ -1,9 +1,17 @@
 import { Fragment } from "react";
 
-const ServiceCard = (props: any) => {
+interface Item {
+  title: string
+}
+
+interface ServiceCardProps {
+  item: Item
+}
+
+const ServiceCard = ({item }: ServiceCardProps) => {
   return (
     <Fragment>
-      <p>{props.item.title}</p>
+      <p>{item.title}</p>
     </Fragment>
   );
 };
