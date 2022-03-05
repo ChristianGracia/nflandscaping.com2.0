@@ -1,5 +1,6 @@
 const Constants = {
   PHONE_NUMBER: "401-447-5446",
+  EMAIL: "naturesfrontierlandscaping@gmail.com",
   // HOME PAGE
   CAROUSEL_SLIDES: [
     {
