@@ -1,9 +1,9 @@
 import React from "react";
 
-const ServiceCard = (props: any)  => {
+const ServiceCard = (props: any) => {
   return (
     <React.Fragment>
-        <p>{props.item.title}</p>
+      <p>{props.item.title}</p>
     </React.Fragment>
   );
 };

@@ -5,7 +5,7 @@ const Gallery: NextPage = () => {
   return (
     <div>
       <main>
-        <PageHeader title="Before & After"/>
+        <PageHeader title="Before & After" />
       </main>
     </div>
   );
