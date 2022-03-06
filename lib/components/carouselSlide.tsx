@@ -105,19 +105,25 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   `;
 
   const renderWaveText = () => {
-    return "0% In-house Financing Available".split("").map((item: string, index: number) => {
-      return (
-        <Box component="span" className="loading loading-animation" key={index}>
+    return "0% In-house Financing Available"
+      .split("")
+      .map((item: string, index: number) => {
+        return (
           <Box
             component="span"
-            className="loading loading-animation finance-text"
-            sx={{ padding: item === " " ? 0.4 : 0.1 }}
+            className="loading loading-animation"
+            key={index}
           >
-            {item}
+            <Box
+              component="span"
+              className="loading loading-animation finance-text"
+              sx={{ padding: item === " " ? 0.4 : 0.1 }}
+            >
+              {item}
+            </Box>
           </Box>
-        </Box>
-      );
-    });
+        );
+      });
   };
   return (
     <StyledContainer>
