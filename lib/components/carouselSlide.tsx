@@ -74,7 +74,49 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         background-color: white;
       }
     }
+
+    .loading {
+      text-align: center;
+      span {
+        display: inline-block;
+        margin: 0 -0.05em;
+      }
+    }
+    
+    .loading-animation {
+      span {
+        margin: 0 -0.05em;
+        animation: loading-animation 0.7s infinite alternate;
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i + 1}) {
+            animation-delay: #{$i * 0.1}s;
+          }
+        }
+      }
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.8);
+      }
+    }
   `;
+
+  const renderWaveText = () => {
+    return "0% In-house Financing Available".split('').map((item) => {
+      <Box
+      className="loading loading-animation"
+      >
+  
+      <Box component="span" className="loading loading-animation finance-text" sx={{padding: 2}}>
+      {item}
+     </Box>
+     </Box>
+
+    })
+  }
   return (
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -103,9 +145,13 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
           </NavLinkButton>
         </Button>
       </Box>
-      <Typography component="p" className="finance-text">
+      {/* <Typography component="p" className="finance-text">
         0% In-house Financing Available
-      </Typography>
+      </Typography> */}
+ 
+       {renderWaveText()}
+     
+
     </StyledContainer>
   );
 };

@@ -1,0 +1,17 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [release]
+  pull_request:
+    branches: [release]
+env:
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker login -u _ -p $HEROKU_API_KEY registry.heroku.com && heroku container:push web --app cg-playground && heroku container:release web --app cg-playground
