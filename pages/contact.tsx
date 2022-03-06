@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import ContactForm from "../lib/components/contactForm";
 import PageHeader from "../lib/components/pageHeader";
 import Constants from "../lib/utility/constants";
-import SideBar from "../lib/components/ui/sidebar";
 const Contact: NextPage = () => {
   return (
     <div>
@@ -26,7 +25,6 @@ const Contact: NextPage = () => {
             allow="fullscreen"
           ></iframe>
         </Box>
-        <SideBar />
       </main>
     </div>
   );
