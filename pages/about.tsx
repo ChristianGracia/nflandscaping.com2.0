@@ -4,6 +4,7 @@ import { ABOUT_TEXT } from "../lib/utility/constants";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
+import Image from 'next/image'
 
 const About: NextPage = () => {
   return (
@@ -23,6 +24,14 @@ const About: NextPage = () => {
               width="100%"
               alt="Picture of founder"
             />
+                    {/* <Image
+              src="/images/about-us.jpg"
+              layout={'fill'}
+              
+              height={300}
+             
+              alt="Picture of founder"
+            /> */}
           </Box>
           <Paper sx={{ maxWidth: 500, margin: "20px auto" }}>
             <Box

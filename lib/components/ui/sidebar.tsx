@@ -1,7 +1,7 @@
 import { useState, createElement } from "react";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import Image from 'next/image'
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
@@ -60,7 +60,7 @@ const SideBar = () => {
         sx={{ width: 250, margin: "20px 0" }}
       >
         <NavLinkButton to="/" newTab={false}>
-          <img src="logo.png" width="200px" alt="nfl logo" />
+          <Image src="/logo.png" width="200px" height="50px" alt="nfl logo" />
         </NavLinkButton>
       </Box>
       <Divider />
