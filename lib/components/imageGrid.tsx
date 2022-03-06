@@ -20,14 +20,18 @@ const ImageGrid = (props: ImageGridProps) => {
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 32px;
-    }`)
+    }`);
   return (
     <StyledContainer>
       <Grid className="image-container" container>
         {props.images.map((item: string, index: number) => {
           return (
             <Grid key={index} item>
-              <img className="image" src={`${props.prepend}${item}`} alt="gallery image" />
+              <img
+                className="image"
+                src={`${props.prepend}${item}`}
+                alt="gallery image"
+              />
             </Grid>
           );
         })}

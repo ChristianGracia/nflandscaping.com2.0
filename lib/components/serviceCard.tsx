@@ -44,12 +44,12 @@ const ServiceCard = ({ item }: ServiceCardProps) => {
     background-position: center;
     background-size: cover;
   }
-  `)
+  `);
   return (
     <StyledContainer>
       <Card>
         <CardMedia
-        className="background-image"
+          className="background-image"
           component="img"
           // height="140"
           width="100%"

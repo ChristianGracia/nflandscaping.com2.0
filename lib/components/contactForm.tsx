@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Alert from "@mui/material/Alert";
 import SendEmail from "../services/emailService";
 
 const ContactForm = (props: any) => {
@@ -69,11 +70,11 @@ const ContactForm = (props: any) => {
   };
 
   const renderErrorMessage = () => {
-    return <Typography component="p">Error sending message</Typography>;
+    return <Alert severity="error">Error sending message</Alert>;
   };
 
   const renderSuccessMessage = () => {
-    return <Typography component="p">Message Received!</Typography>;
+    return <Alert severity="success">Message Received!</Alert>;
   };
 
   return (

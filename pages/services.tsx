@@ -10,10 +10,16 @@ const Services: NextPage = () => {
     <div>
       <main>
         <PageHeader title="Services" />
-        <Box display="flex" flexDirection="row" flexWrap="wrap" alignItems="center" justifyContent="center">
-        {services.map((item, i) => (
-          <ServiceCard key={i} item={item} />
-        ))}
+        <Box
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="center"
+        >
+          {services.map((item, i) => (
+            <ServiceCard key={i} item={item} />
+          ))}
         </Box>
       </main>
     </div>
