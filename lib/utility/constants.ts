@@ -40,46 +40,57 @@ const Constants = {
     {
       title: "Demolition",
       image: "demolition.jpg",
+      icon: "",
     },
     {
       title: "Full Landscaping Services",
       image: "landscaping-service.jpg",
+      icon: "",
     },
     {
       title: "Property Management",
       image: "property-management.jpg",
+      icon: "",
     },
     {
       title: "Snow Removal",
       image: "snow-removal.jpg",
+      icon: "",
     },
     {
       title: "Trash Removal / Estate Cleanout",
       image: "trash.jpg",
+      icon: "",
     },
     {
       title: "Bobcat Services",
       image: "bobcat.jpg",
+      icon: "",
     },
     {
       title: "Power Washing",
       image: "powerwashing.jpg",
+      icon: "",
     },
     {
-      title: "consulting.jpg",
-      image: "Consulting",
+      title: "Consulting",
+      image: "consulting.jpg",
+      icon: "",
     },
     {
       title: "Irrigation",
       image: "irrigation.jpg",
+      icon: "",
     },
     {
       title: "Fencing",
       image: "fencing.jpg",
+      icon: "",
     },
     {
       title: "Home Improvement",
       image: "home-improvement.jpeg",
+      icon: "",
     },
   ],
 

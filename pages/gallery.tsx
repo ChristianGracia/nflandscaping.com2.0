@@ -40,9 +40,9 @@ const Gallery: NextPage = () => {
     setShowSelectionButtons(false);
   };
 
-  const serviceCards = ["Landscaping / Construction", "Home Improvement"];
+  const galleryCards = ["Landscaping / Construction", "Home Improvement"];
 
-  const renderServiceCard = (title: string, index: number) => {
+  const renderGalleryCard = (title: string, index: number) => {
     return (
       <Card key={index} onClick={() => selectService(title)}>
         <CardContent>
@@ -74,8 +74,8 @@ const Gallery: NextPage = () => {
           }
         />
         {showSelectionButtons ? (
-          serviceCards.map((item: string, index: number) =>
-            renderServiceCard(item, index)
+          galleryCards.map((item: string, index: number) =>
+            renderGalleryCard(item, index)
           )
         ) : (
           <Button onClick={handleBackButton}>Back</Button>
