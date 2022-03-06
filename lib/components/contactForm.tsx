@@ -37,13 +37,13 @@ const ContactForm = (props: any) => {
     const value = e.target.value;
     if (e.target.id === "name-input") {
       setNameValue(value);
-      setAutoFocus([1, 0, 0]);
+      setAutoFocus([true, false, false]);
     } else if (e.target.id === "phone-input") {
       setPhoneValue(value);
-      setAutoFocus([0, 1, 0]);
+      setAutoFocus([false, true, false]);
     } else if (e.target.id === "message-input") {
       setMessageValue(value);
-      setAutoFocus([0, 0, 1]);
+      setAutoFocus([false, false, true]);
     }
   };
 
