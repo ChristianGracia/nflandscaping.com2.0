@@ -27,11 +27,7 @@ const StyledContainer = styled.div`
   background-color: white;
   z-index: 100;
   .nav-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
     width: 100%;
-
     a {
       &:hover {
         color: grey;
@@ -52,8 +48,11 @@ const StyledContainer = styled.div`
     }
 
     @media only screen and (max-width: 650px) {
-      .nav-col {
+      .hidden {
         display: none;
+      }
+      .nav-col {
+        margin-left: 30px;
       }
     }
 
@@ -102,16 +101,20 @@ const Header = () => {
     <StyledContainer>
       <AppBar sx={{ backgroundColor: "white" }} elevation={0} position="fixed">
         <Toolbar>
-          <Grid item xs={6} sm={3} md={2}>
-            <NavLinkButton to="/" newTab={false}>
-              <img src="logo.png" width="120px" alt="nfl logo" />
-            </NavLinkButton>
-          </Grid>
-          <Box className="nav-container">
-            <Grid className="nav-col" item>
+          <NavLinkButton to="/" newTab={false}>
+            <img src="logo.png" width="120px" alt="nfl logo" />
+          </NavLinkButton>
+          <Box
+            className="nav-container"
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid className="nav-col hidden" item>
               {createNavLinks()}
             </Grid>
-            <Grid className="nav-col" item>
+            <Grid className="nav-col" sx={{ marginTop: 1 }} item>
               {createSocialLinks()}
             </Grid>
             <Grid className="menu-icon" item>

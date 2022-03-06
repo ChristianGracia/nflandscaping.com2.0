@@ -84,34 +84,34 @@ const Gallery: NextPage = () => {
               : ""
           }
         />
-        <Box sx={{paddingBottom: 10}}>
-        {showSelectionButtons ? (
-          <Box
-            display="flex"
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="center"
-            flexWrap="wrap"
-          >
-            {galleryItems.map((item: GalleryItem, index: number) =>
-              renderGallerySectionCard(item, index)
-            )}
-          </Box>
-        ) : (
-          <Button onClick={handleBackButton}>Back</Button>
-        )}
-        {showHomeImpImages && (
-          <ImageGrid
-            prepend={"images/gallery-images/"}
-            images={homeImpImages}
-          ></ImageGrid>
-        )}
-        {showLandscapingImages && (
-          <ImageGrid
-            prepend={"images/gallery-images/"}
-            images={landscapingImages}
-          ></ImageGrid>
-        )}
+        <Box sx={{ paddingBottom: 10 }}>
+          {showSelectionButtons ? (
+            <Box
+              display="flex"
+              flexDirection="row"
+              alignItems="center"
+              justifyContent="center"
+              flexWrap="wrap"
+            >
+              {galleryItems.map((item: GalleryItem, index: number) =>
+                renderGallerySectionCard(item, index)
+              )}
+            </Box>
+          ) : (
+            <Button onClick={handleBackButton}>Back</Button>
+          )}
+          {showHomeImpImages && (
+            <ImageGrid
+              prepend={"images/gallery-images/"}
+              images={homeImpImages}
+            ></ImageGrid>
+          )}
+          {showLandscapingImages && (
+            <ImageGrid
+              prepend={"images/gallery-images/"}
+              images={landscapingImages}
+            ></ImageGrid>
+          )}
         </Box>
       </main>
     </div>

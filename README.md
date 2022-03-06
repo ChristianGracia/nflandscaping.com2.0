@@ -1,8 +1,8 @@
 # nflandscaping.com
 
-will replace nflandscaping.com soon
+Dockerized Typescript React site live at nflandscaping.com with SSR, MUI 5, Emotion.js, and Next.js
 
-rewriting it in TypeScript and improving
+[nflandscaping.com](https://www.nflandscaping.com)
 
 # Installation
 
