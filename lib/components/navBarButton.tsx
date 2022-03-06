@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import styled from "@emotion/styled";
 
@@ -22,8 +21,7 @@ const NavLinkButton = ({
       color: grey;
     }
   }
-  `
-  )
+  `);
   return (
     <StyledContainer>
       <Link href={to} as={to} shallow>

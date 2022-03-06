@@ -1,4 +1,4 @@
-import Constants from "../utility/constants";
+import { API } from "../utility/constants";
 
 interface EmailBodyProps {
   name: string;
@@ -7,16 +7,13 @@ interface EmailBodyProps {
 }
 
 const sendEmail = async (emailBody: EmailBodyProps) => {
-  const response = await fetch(
-    `${Constants.PROD_API_URL}email/send-email-nfl`,
-    {
-      method: "POST",
-      body: JSON.stringify(emailBody),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const response = await fetch(`${API.PROD_API_URL}email/send-email-nfl`, {
+    method: "POST",
+    body: JSON.stringify(emailBody),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
   return response;
 };
 export default sendEmail;
