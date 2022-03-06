@@ -1,5 +1,6 @@
-import { Fragment } from "react";
+
 import Link from "next/link";
+import styled from "@emotion/styled";
 
 interface NavLinkButtonProps {
   to: string;
@@ -12,14 +13,25 @@ const NavLinkButton = ({
   children = null,
   newTab = false,
 }: NavLinkButtonProps) => {
+  const StyledContainer = styled.div(`
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    &:hover {
+      color: grey;
+    }
+  }
+  `
+  )
   return (
-    <Fragment>
+    <StyledContainer>
       <Link href={to} as={to} shallow>
         <a {...(newTab && { target: "_blank", rel: "noreferrer" })}>
           {children}
         </a>
       </Link>
-    </Fragment>
+    </StyledContainer>
   );
 };
 
