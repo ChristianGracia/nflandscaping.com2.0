@@ -62,7 +62,7 @@ const Header = () => {
     return Object.keys(navLinks).map((item: string, index: number) => {
       return (
         <Grid key={index} className="nav-item" item>
-          <NavLinkButton newTab={false} to={navLinks[item] as string}>
+          <NavLinkButton newTab={false} to={navLinks[item as keyof typeof navLinks]}>
             <Typography>{item}</Typography>
           </NavLinkButton>
         </Grid>
@@ -74,7 +74,7 @@ const Header = () => {
     return Object.keys(socialLinks).map((item: string, index: number) => {
       return (
         <Grid key={index} className="nav-item" item>
-          <NavLinkButton newTab to={socialLinks[item].url as string}>
+          <NavLinkButton newTab to={socialLinks[item as keyof typeof socialLinks].url}>
             {socialLinks[item].icon}
           </NavLinkButton>
         </Grid>
