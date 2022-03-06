@@ -56,7 +56,7 @@ const SideBar = () => {
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <NavLinkButton to={navLinks[text] as string} newTab={false}>
+            <NavLinkButton to={navLinks[text as keyof typeof navLinks]} newTab={false}>
           {text}
         </NavLinkButton>
           </ListItem>
