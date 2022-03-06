@@ -82,7 +82,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         margin: 0 -0.05em;
       }
     }
-    
+
     .loading-animation {
       span {
         margin: 0 -0.05em;
@@ -105,18 +105,20 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   `;
 
   const renderWaveText = () => {
-    return "0% In-house Financing Available".split('').map((item) => {
-      <Box
-      className="loading loading-animation"
-      >
-  
-      <Box component="span" className="loading loading-animation finance-text" sx={{padding: 2}}>
-      {item}
-     </Box>
-     </Box>
-
-    })
-  }
+    return "0% In-house Financing Available".split("").map((item) => {
+      return (
+        <Box component="span" className="loading loading-animation">
+          <Box
+            component="span"
+            className="loading loading-animation finance-text"
+            sx={{ padding: item === " " ? 0.6 : 0.2 }}
+          >
+            {item}
+          </Box>
+        </Box>
+      );
+    });
+  };
   return (
     <StyledContainer>
       <Box display="flex" flexDirection="column" alignItems="center">
@@ -148,10 +150,14 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       {/* <Typography component="p" className="finance-text">
         0% In-house Financing Available
       </Typography> */}
- 
-       {renderWaveText()}
-     
-
+      <Box
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="center"
+      >
+        {renderWaveText()}
+      </Box>
     </StyledContainer>
   );
 };
