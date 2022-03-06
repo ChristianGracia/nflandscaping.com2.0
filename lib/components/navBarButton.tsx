@@ -1,15 +1,25 @@
-import * as React from "react";
+import { Fragment } from "react";
 import Link from "next/link";
 
-const NavLinkButton = (props: any) => {
+interface NavLinkButtonProps {
+  to: string;
+  newTab: boolean;
+  children: any;
+}
+
+const NavLinkButton = ({
+  to = "",
+  children = null,
+  newTab = false,
+}: NavLinkButtonProps) => {
   return (
-    <React.Fragment>
-      <Link href={props.to} as={props.to} shallow>
-        <a {...(props.newTab && { target: "_blank", rel: "noreferrer" })}>
-          {props.children}
+    <Fragment>
+      <Link href={to} as={to} shallow>
+        <a {...(newTab && { target: "_blank", rel: "noreferrer" })}>
+          {children}
         </a>
       </Link>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

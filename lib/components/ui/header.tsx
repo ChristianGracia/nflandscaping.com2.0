@@ -131,7 +131,7 @@ const Header = () => {
     return Object.keys(navLinks).map((item: string, index: number) => {
       return (
         <Grid key={index} className="nav-item" item>
-          <NavLinkButton to={navLinks[item] as String}>
+          <NavLinkButton newTab={false} to={navLinks[item] as string}>
             <Typography>{item}</Typography>
           </NavLinkButton>
         </Grid>
@@ -143,7 +143,7 @@ const Header = () => {
     return Object.keys(socialLinks).map((item: string, index: number) => {
       return (
         <Grid key={index} className="nav-item" item>
-          <NavLinkButton newTab to={socialLinks[item].url as String}>
+          <NavLinkButton newTab to={socialLinks[item].url as string}>
             {socialLinks[item].icon}
           </NavLinkButton>
         </Grid>
@@ -161,8 +161,8 @@ const Header = () => {
       <BaseAppBar color="transparent" elevation={0} position="static">
         <Toolbar>
           <Grid item xs={6} sm={3} md={2}>
-            <NavLinkButton to="/">
-              <img src="logo1.png" width="120px" />
+            <NavLinkButton to="/" newTab={false}>
+              <img src="logo.png" width="120px" />
             </NavLinkButton>
           </Grid>
           <StyledNav>

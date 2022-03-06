@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import type { NextPage } from "next";
 import PageHeader from "../lib/components/pageHeader";
 import ServiceCard from "../lib/components/serviceCard";
@@ -9,10 +10,17 @@ const Services: NextPage = () => {
     <div>
       <main>
         <PageHeader title="Services" />
-
-        {services.map((item, i) => (
-          <ServiceCard key={i} item={item} />
-        ))}
+        <Box
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          alignItems="center"
+          justifyContent="center"
+        >
+          {services.map((item, i) => (
+            <ServiceCard key={i} item={item} />
+          ))}
+        </Box>
       </main>
     </div>
   );
