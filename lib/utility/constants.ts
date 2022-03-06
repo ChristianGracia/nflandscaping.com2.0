@@ -5,6 +5,13 @@ const Constants = {
   LOCAL_API_URL: "http://localhost:3000/",
   STAGING_API_URL: "http://christiangracia-api-staging.herokuapp.com/",
   PROD_API_URL: "https://christiangracia-api.herokuapp.com/",
+  // NAV LINKS
+  NAV_LINKS: {
+    Services: "/services",
+    "About Us": "/about",
+    Gallery: "/gallery",
+    Contact: "/contact",
+  },
   // HOME PAGE
   CAROUSEL_SLIDES: [
     {

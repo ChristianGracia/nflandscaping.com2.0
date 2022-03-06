@@ -5,13 +5,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import styled from "@emotion/styled";
 import NavLinkButton from "../navBarButton";
 import SideBar from "./sidebar";
+import Constants from "../../utility/constants";
 
-const navLinks: any = {
-  Services: "/services",
-  "About Us": "/about",
-  Gallery: "/gallery",
-  Contact: "/contact",
-};
+const navLinks = Constants.NAV_LINKS;
 
 const socialLinks: any = {
   Facebook: {
@@ -30,9 +26,6 @@ const StyledNav = styled.nav`
   flex-direction: row;
   width: 100%;
   a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
     &:hover {
       color: grey;
     }
