@@ -7,6 +7,7 @@ import PageHeader from "../lib/components/pageHeader";
 import { PHONE_NUMBER, EMAIL } from "../lib/utility/constants";
 import MailIcon from "@mui/icons-material/Mail";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import NavLinkButton from "../lib/components/navBarButton";
 const Contact: NextPage = () => {
   return (
     <div>
@@ -35,11 +36,19 @@ const Contact: NextPage = () => {
                 sx={{ m: 3 }}
               >
                 <LocalPhoneIcon />
-                <Typography component="p">{PHONE_NUMBER}</Typography>
+                <NavLinkButton newTab={false} to={`tel:${PHONE_NUMBER}`}>
+                  <Typography sx={{ fontWeight: "bold", marginLeft: 1 }}>
+                    {PHONE_NUMBER}
+                  </Typography>
+                </NavLinkButton>
               </Box>
               <Box display="flex" flexDirection="row" alignItems="center">
                 <MailIcon />
-                <Typography component="p">{EMAIL}</Typography>
+                <NavLinkButton newTab={false} to={`mailto:${EMAIL}`}>
+                  <Typography sx={{ fontWeight: "bold", marginLeft: 1 }}>
+                    {EMAIL}
+                  </Typography>
+                </NavLinkButton>
               </Box>
               <Typography component="p" sx={{ m: 3 }}>
                 Available 24/7

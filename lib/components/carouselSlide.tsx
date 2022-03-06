@@ -3,7 +3,9 @@ import styled from "@emotion/styled";
 import { PHONE_NUMBER } from "../utility/constants";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import Link from "next/link";
+import NavLinkButton from "./navBarButton";
 interface Item {
   image: string;
   description: string;
@@ -16,7 +18,7 @@ interface CarouselSlideProps {
 const CarouselSlide = ({ item }: CarouselSlideProps) => {
   const StyledContainer = styled.div`
     width: 100%;
-    height: calc(100vh - 114px);
+    height: calc(100vh - 89px);
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(/images/carousel-images/${item.image});
     background-position: center;
@@ -26,9 +28,15 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
     flex-direction: column;
     justify-content: space-around;
     .button-div {
+      max-width: 200px;
+      margin: 0 auto;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
+      @media only screen and (min-width: 650px) {
+        flex-direction: row;
+        max-width: 400px;
+      }
       .image-button {
         margin: 10px;
       }
@@ -52,6 +60,12 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         font-size: 32px;
       }
     }
+    .finance-text {
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
   `;
   return (
     <StyledContainer>
@@ -60,17 +74,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
           {item.title}
         </Typography>
         {item.description && (
-          <Typography
-            component="h1"
-            sx={{
-              color: "white",
-              fontWeight: "bold",
-              textAlign: "center",
-              marginTop: 5,
-              fontSize: 16,
-            }}
-            className="item-description"
-          >
+          <Typography component="h1" className="item-description">
             {item.description}
           </Typography>
         )}
@@ -78,13 +82,32 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
 
       <Box className="button-div">
         <Button variant="contained" className="image-button callButton">
-          <Typography component="p">{PHONE_NUMBER}</Typography>
+          <Box display="flex" flexDirection="row" alignItems="center">
+            <LocalPhoneIcon />
+            <Link href={`tel:${PHONE_NUMBER}`}>
+              <a
+                href={`tel:${PHONE_NUMBER}`}
+                data-rel="external"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  marginLeft: 5,
+                }}
+              >
+                {PHONE_NUMBER}
+              </a>
+            </Link>
+          </Box>
         </Button>
         <Button variant="contained" className="image-button estimateButton">
-          Free Estimate
+          <NavLinkButton newTab={false} to={"/contact"}>
+            <Typography sx={{ fontWeight: "bold", color: "white" }}>
+              Free Estimate
+            </Typography>
+          </NavLinkButton>
         </Button>
       </Box>
-      <Typography component="p" sx={{ color: "white", textAlign: "center" }}>
+      <Typography component="p" className="finance-text">
         0% In-house Financing Available
       </Typography>
     </StyledContainer>
