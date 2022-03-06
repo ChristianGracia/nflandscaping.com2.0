@@ -15,7 +15,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ item }: ServiceCardProps) => {
-  const StyledCard = styled.div(`
+  const StyledContainer = styled.div(`
   width: 40vw;
   min-width: 280px;
   max-width: 500px;
@@ -46,7 +46,7 @@ const ServiceCard = ({ item }: ServiceCardProps) => {
   }
   `)
   return (
-    <StyledCard>
+    <StyledContainer>
       <Card>
         <CardMedia
         className="background-image"
@@ -61,7 +61,7 @@ const ServiceCard = ({ item }: ServiceCardProps) => {
           <Typography component="p">{item.title}</Typography>
         </CardContent>
       </Card>
-    </StyledCard>
+    </StyledContainer>
   );
 };
 

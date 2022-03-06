@@ -162,7 +162,7 @@ const Header = () => {
         <Toolbar>
           <Grid item xs={6} sm={3} md={2}>
             <NavLinkButton to="/" newTab={false}>
-              <img src="logo1.png" width="120px" />
+              <img src="logo.png" width="120px" />
             </NavLinkButton>
           </Grid>
           <StyledNav>

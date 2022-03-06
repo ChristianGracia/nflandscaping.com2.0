@@ -13,7 +13,7 @@ interface CarouselSlideProps {
 }
 
 const CarouselSlide = ({ item }: CarouselSlideProps) => {
-  const ImageContainer = styled.div`
+  const StyledContainer = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(/images/${item.image});
@@ -27,7 +27,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
     }
   `;
   return (
-    <ImageContainer>
+    <StyledContainer>
       {/* <p>{props.item.title}</p> */}
       {item.description && (
         <Typography component="p">{item.description}</Typography>
@@ -42,7 +42,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         </Button>
       </Box>
       <Typography component="p">0% In-house Financing Available</Typography>
-    </ImageContainer>
+    </StyledContainer>
   );
 };
 
