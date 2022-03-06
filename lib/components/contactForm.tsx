@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import SendEmail from "../services/emailService";
+import { CONTACT_TEXT } from "../utility/constants";
+import Typography from "@mui/material/Typography";
 
 const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
@@ -20,23 +21,18 @@ const ContactForm = (props: any) => {
       message: messageValue,
     };
     const submitted = await SendEmail(data);
-    console.log(submitted);
 
     if (submitted.status === 204) {
       setFormSubmitted(true);
-      console.log("true");
     } else {
       setFormError(true);
     }
   };
 
-  const test1 = () => {
-    console.log("clic");
-  };
-
   const renderTextInput = () => {
     return (
       <>
+        <Typography component="p">{CONTACT_TEXT.ESTIMATE_TEXT}</Typography>
         <TextField
           id="name-input"
           label="Name"

@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
+import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { useEffect } from "react";
 
 interface Item {
   title: string;
@@ -12,9 +14,10 @@ interface Item {
 
 interface ServiceCardProps {
   item: Item;
+  Icon: any;
 }
 
-const ServiceCard = ({ item }: ServiceCardProps) => {
+const ServiceCard = ({ item, Icon }: ServiceCardProps) => {
   const StyledContainer = styled.div(`
   width: 40vw;
   min-width: 280px;
@@ -43,6 +46,9 @@ const ServiceCard = ({ item }: ServiceCardProps) => {
     height: 100%;
     background-position: center;
     background-size: cover;
+    .service-text {
+      margin-right: 5px;
+    }
   }
   `);
   return (
@@ -58,7 +64,17 @@ const ServiceCard = ({ item }: ServiceCardProps) => {
           alt="service image"
         />
         <CardContent>
-          <Typography component="p">{item.title}</Typography>
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography className="service-text" component="p">
+              {item.title}
+            </Typography>
+            {Icon}
+          </Box>
         </CardContent>
       </Card>
     </StyledContainer>

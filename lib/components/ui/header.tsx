@@ -5,9 +5,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import styled from "@emotion/styled";
 import NavLinkButton from "../navBarButton";
 import SideBar from "./sidebar";
-import Constants from "../../utility/constants";
+import { NAV_LINKS } from "../../utility/constants";
 
-const navLinks = Constants.NAV_LINKS;
+const navLinks = NAV_LINKS;
 
 const socialLinks: any = {
   Facebook: {
@@ -62,7 +62,10 @@ const Header = () => {
     return Object.keys(navLinks).map((item: string, index: number) => {
       return (
         <Grid key={index} className="nav-item" item>
-          <NavLinkButton newTab={false} to={navLinks[item] as string}>
+          <NavLinkButton
+            newTab={false}
+            to={navLinks[item as keyof typeof navLinks].url}
+          >
             <Typography>{item}</Typography>
           </NavLinkButton>
         </Grid>
@@ -74,7 +77,10 @@ const Header = () => {
     return Object.keys(socialLinks).map((item: string, index: number) => {
       return (
         <Grid key={index} className="nav-item" item>
-          <NavLinkButton newTab to={socialLinks[item].url as string}>
+          <NavLinkButton
+            newTab
+            to={socialLinks[item as keyof typeof socialLinks].url}
+          >
             {socialLinks[item].icon}
           </NavLinkButton>
         </Grid>

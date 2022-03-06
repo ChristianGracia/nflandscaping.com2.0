@@ -1,11 +1,47 @@
 import type { NextPage } from "next";
 import PageHeader from "../lib/components/pageHeader";
+import { ABOUT_TEXT } from "../lib/utility/constants";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 
 const About: NextPage = () => {
   return (
     <div>
       <main>
         <PageHeader title="About Us" />
+        <Typography sx={{ textAlign: "center" }} component="h4">
+          {ABOUT_TEXT.CUT_CORNER_TEXT}
+        </Typography>
+        <Paper sx={{ maxWidth: "90vw", margin: "0 auto" }}>
+          <Box sx={{ maxWidth: 500, margin: "0 auto" }}>
+            <img
+              src="images/about-us.jpg"
+              width="100%"
+              alt="Picture of founder"
+            />
+          </Box>
+          <Paper sx={{ maxWidth: 500, margin: "0 auto" }}>
+            <Box
+              sx={{ maxWidth: 500, margin: "0 auto" }}
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Typography component="h4">
+                {ABOUT_TEXT.FOUNDER_QUOTE_1}
+              </Typography>
+              <Typography component="h4">
+                {ABOUT_TEXT.FOUNDER_QUOTE_2}
+              </Typography>
+              <Typography component="h4">Founder</Typography>
+            </Box>
+          </Paper>
+        </Paper>
+        <Typography sx={{ textAlign: "center" }} component="h4">
+          {ABOUT_TEXT.WORK_TEXT}
+        </Typography>
       </main>
     </div>
   );

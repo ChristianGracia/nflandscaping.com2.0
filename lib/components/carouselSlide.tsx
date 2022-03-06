@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
-import Constants from "../utility/constants";
+import { PHONE_NUMBER } from "../utility/constants";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
@@ -35,7 +35,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
 
       <Box className="button-div">
         <Button variant="contained" className="image-button callButton">
-          {Constants.PHONE_NUMBER}
+          <Typography component="p">{PHONE_NUMBER}</Typography>
         </Button>
         <Button variant="contained" className="image-button estimateButton">
           Free Estimate
