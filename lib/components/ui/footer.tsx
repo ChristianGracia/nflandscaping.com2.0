@@ -8,14 +8,14 @@ const Footer = () => {
     bottom: 0;
     width: 100%;
     height: 25px;
-    padding: 3px 0;
+    padding: 15px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: white;
     .footer-item {
-      margin: 2px;
+      margin: 0 2px;
     }
   `);
   return (
@@ -35,7 +35,9 @@ const Footer = () => {
       <Typography component="span" className="footer-item">
         |
       </Typography>
-      <small>Copyright &copy; 2022</small>
+      <Typography component="span" className="footer-item">
+        <small>Copyright &copy; 2022</small>
+      </Typography>
     </StyledContainer>
   );
 };

@@ -10,7 +10,7 @@ const PageHeader = ({ title }: PageHeaderProps) => {
     color: black;
     font-weight: bold;
     font-size: 30px;
-    margin-top: 20px;
+    margin: 20px 0;
     text-align: center;
   `;
   return <StyledContainer>{title}</StyledContainer>;
