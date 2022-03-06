@@ -3,13 +3,19 @@ import { ThemeOptions } from "@mui/material/styles";
 const lightThemeOptions: ThemeOptions = {
   palette: {
     mode: "light",
+    // primary: {
+    //   main: purple[500],
+    // },
+    // secondary: {
+    //   main: green[500],
+    // },
   },
   typography: {
     fontFamily: [
+      "Roboto",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
-      "Roboto",
       '"Helvetica Neue"',
       "Arial",
       "sans-serif",
@@ -17,6 +23,9 @@ const lightThemeOptions: ThemeOptions = {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
+    button: {
+      textTransform: "none",
+    },
   },
 };
 

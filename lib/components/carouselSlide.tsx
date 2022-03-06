@@ -55,7 +55,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       font-weight: bold;
       color: white;
       text-align: center;
-      font-size: 22px;
+      font-size: 25px;
       @media only screen and (min-width: 650px) {
         font-size: 40px;
       }
@@ -65,6 +65,14 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       color: white;
       text-align: center;
       font-size: 20px;
+    }
+    .image-button {
+      color: black;
+      background-color: white;
+      font-weight: bold;
+      &:hover {
+        background-color: white;
+      }
     }
   `;
   return (
@@ -81,29 +89,17 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       </Box>
 
       <Box className="button-div">
-        <Button variant="contained" className="image-button callButton">
+        <Button variant="contained" className="image-button call-button">
           <Box display="flex" flexDirection="row" alignItems="center">
             <LocalPhoneIcon />
-            <Link href={`tel:${PHONE_NUMBER}`}>
-              <a
-                href={`tel:${PHONE_NUMBER}`}
-                data-rel="external"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                  marginLeft: 5,
-                }}
-              >
-                {PHONE_NUMBER}
-              </a>
-            </Link>
+            <NavLinkButton newTab={false} to={`tel:${PHONE_NUMBER}`}>
+              {PHONE_NUMBER}
+            </NavLinkButton>
           </Box>
         </Button>
-        <Button variant="contained" className="image-button estimateButton">
+        <Button variant="contained" className="image-button estimate-button">
           <NavLinkButton newTab={false} to={"/contact"}>
-            <Typography sx={{ fontWeight: "bold", color: "white" }}>
-              Free Estimate
-            </Typography>
+            Free Estimate
           </NavLinkButton>
         </Button>
       </Box>
