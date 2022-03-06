@@ -105,13 +105,13 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   `;
 
   const renderWaveText = () => {
-    return "0% In-house Financing Available".split("").map((item) => {
+    return "0% In-house Financing Available".split("").map((item: string, index: number) => {
       return (
-        <Box component="span" className="loading loading-animation">
+        <Box component="span" className="loading loading-animation" key={index}>
           <Box
             component="span"
             className="loading loading-animation finance-text"
-            sx={{ padding: item === " " ? 0.6 : 0.2 }}
+            sx={{ padding: item === " " ? 0.4 : 0.1 }}
           >
             {item}
           </Box>

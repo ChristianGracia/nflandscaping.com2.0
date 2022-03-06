@@ -17,6 +17,14 @@ const Footer = () => {
     .footer-item {
       margin: 0 2px;
     }
+    .hidden {
+      display: none;
+    }
+    @media only screen and (min-width: 347px) { 
+      .hidden {
+        display: flex;
+      }
+    }
   `);
   return (
     <StyledContainer>
@@ -32,10 +40,10 @@ const Footer = () => {
           christiangracia.com
         </Typography>
       </NavLinkButton>
-      <Typography component="span" className="footer-item">
+      <Typography component="span" className="footer-item hidden">
         |
       </Typography>
-      <Typography component="span" className="footer-item">
+      <Typography component="span" className="footer-item hidden">
         <small>Copyright &copy; 2022</small>
       </Typography>
     </StyledContainer>
