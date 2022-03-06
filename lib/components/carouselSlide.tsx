@@ -16,7 +16,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   const StyledContainer = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url(/images/${item.image});
+    background-image: url(/images/carousel-images/${item.image});
     .button-div {
       display: flex;
       flex-direction: row;

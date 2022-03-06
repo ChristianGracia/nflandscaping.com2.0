@@ -12,12 +12,12 @@ const Constants = {
       description:
         "With over 10 years of experience, we work with our clients to make their ideas come true",
 
-      image: "homeBackground.jpeg",
+      image: "homeBackground1.jpeg",
     },
     {
       title: "Jobs Big or Small, We Got You Covered",
       description: "",
-      image: "homeBackground1.jpeg",
+      image: "homeBackground2.jpeg",
     },
     {
       title: "Making RI and MA Greener One Landscape at a Time",
