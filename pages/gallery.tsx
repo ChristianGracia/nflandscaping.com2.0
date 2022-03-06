@@ -84,6 +84,7 @@ const Gallery: NextPage = () => {
               : ""
           }
         />
+        <Box sx={{paddingBottom: 10}}>
         {showSelectionButtons ? (
           <Box
             display="flex"
@@ -111,6 +112,7 @@ const Gallery: NextPage = () => {
             images={landscapingImages}
           ></ImageGrid>
         )}
+        </Box>
       </main>
     </div>
   );
