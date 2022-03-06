@@ -19,12 +19,12 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ item, Icon }: ServiceCardProps) => {
   const StyledContainer = styled.div(`
-  width: 40vw;
-  min-width: 280px;
-  max-width: 500px;
-  height: 330px;
-  flex: 1 1 auto;
+  width: 400px;
+  max-width: 99vw;
+  height: 400px;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -40,42 +40,35 @@ const ServiceCard = ({ item, Icon }: ServiceCardProps) => {
       opacity: 0.9;
     }
   }
-
-  .background-image {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    .service-text {
-      margin-right: 5px;
-    }
+  .service-text {
+    margin-right: 5px;
   }
   `);
   return (
     <StyledContainer>
-      <Card>
+      <Card raised={true}>
         <CardMedia
           className="background-image"
           component="img"
-          // height="140"
-          width="100%"
+          height="300px"
+          width="300px"
           max-width=""
           image={`images/services-list/${item.image}`}
           alt="service image"
         />
-        <CardContent>
-          <Box
-            display="flex"
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Typography className="service-text" component="p">
-              {item.title}
-            </Typography>
-            {Icon}
-          </Box>
-        </CardContent>
+
+        <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+          sx={{ margin: "5px 0" }}
+        >
+          <Typography className="service-text" component="p">
+            {item.title}
+          </Typography>
+          {Icon}
+        </Box>
       </Card>
     </StyledContainer>
   );

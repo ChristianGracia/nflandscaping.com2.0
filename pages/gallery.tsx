@@ -72,7 +72,7 @@ const Gallery: NextPage = () => {
   };
   return (
     <div>
-      <main>
+      <main className="main">
         <PageHeader
           title={
             showSelectionButtons

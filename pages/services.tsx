@@ -36,7 +36,7 @@ const Services: NextPage = () => {
   const services = SERVICES;
   return (
     <div>
-      <main>
+      <main className="main">
         <PageHeader title="Services" />
         <Box
           display="flex"

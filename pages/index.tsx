@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const StyledContainer = styled.div``;
   return (
     <div>
-      <main>
+      <main className="main">
         <StyledContainer>
           <Carousel>
             {carouselSlides.map((item, i) => (
