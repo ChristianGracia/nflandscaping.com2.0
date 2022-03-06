@@ -5,11 +5,11 @@ interface Item {
   title: string;
 }
 
-interface GalleryCardProps {
+interface GallerySectionCardProps {
   item: Item;
 }
 
-const GalleryCard = ({ item }: GalleryCardProps) => {
+const GallerySectionCard = ({ item }: GallerySectionCardProps) => {
   return (
     <Fragment>
       <Typography component="p">{item.title}</Typography>
@@ -17,4 +17,4 @@ const GalleryCard = ({ item }: GalleryCardProps) => {
   );
 };
 
-export default GalleryCard;
+export default GallerySectionCard;
