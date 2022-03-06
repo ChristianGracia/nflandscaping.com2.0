@@ -161,7 +161,7 @@ const Header = () => {
       <BaseAppBar color="transparent" elevation={0} position="static">
         <Toolbar>
           <Grid item xs={6} sm={3} md={2}>
-            <NavLinkButton to="/">
+            <NavLinkButton to="/" newTab={false}>
               <img src="logo1.png" width="120px" />
             </NavLinkButton>
           </Grid>

@@ -7,7 +7,11 @@ interface NavLinkButtonProps {
   children: any;
 }
 
-const NavLinkButton = ({ to, children, newTab }: NavLinkButtonProps) => {
+const NavLinkButton = ({
+  to = "",
+  children = null,
+  newTab = false,
+}: NavLinkButtonProps) => {
   return (
     <Fragment>
       <Link href={to} as={to} shallow>
