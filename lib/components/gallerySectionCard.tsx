@@ -16,15 +16,15 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
   const StyledContainer = styled.div(
     `
     .menu-item {
-      width: 40vw;
-      min-width: 300px;
+      width: 90vw;
+      max-width: 500px;
       height: 300px;
       flex: 1 1 auto;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid black;
-      margin: 0 20px;
+      margin: 10px 20px;
       overflow: hidden;
     
       &:hover {
@@ -39,14 +39,12 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
       }
     
       .background-image {
-        width: 40vw;
-        min-width: 300px;
+        width: 90vw;
+        max-width: 500px;
         height: 300px;
-        // height: 80vh;
-        // height: 130%;
         background-image: url(images/gallery-sections/${item.imageUrl});
         background-position: center;
-        background-size: center;
+        background-size: cover;
         background-repeat: no-repeat;
       }
     
