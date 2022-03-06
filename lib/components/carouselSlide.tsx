@@ -22,7 +22,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(/images/carousel-images/${item.image});
     background-position: center;
-    background-size: center;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       text-align: center;
       font-size: 22px;
       @media only screen and (min-width: 650px) {
-        font-size: 32px;
+        font-size: 40px;
       }
     }
     .finance-text {
