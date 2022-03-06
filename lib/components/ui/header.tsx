@@ -103,7 +103,7 @@ const Header = () => {
       <AppBar sx={{ backgroundColor: "white" }} elevation={0} position="fixed">
         <Toolbar>
           <NavLinkButton to="/" newTab={false}>
-            <Image src="/logo.png" height="35px" width="120px" alt="nfl logo" />
+            <Image src="/logo.png" height={35} width={120} alt="nfl logo" />
           </NavLinkButton>
           <Box
             className="nav-container"

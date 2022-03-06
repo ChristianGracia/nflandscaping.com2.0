@@ -60,7 +60,7 @@ const SideBar = () => {
         sx={{ width: 250, margin: "20px 0" }}
       >
         <NavLinkButton to="/" newTab={false}>
-          <Image src="/logo.png" width="200px" height="50px" alt="nfl logo" />
+          <Image src="/logo.png" height={50} width={200} alt="nfl logo" />
         </NavLinkButton>
       </Box>
       <Divider />

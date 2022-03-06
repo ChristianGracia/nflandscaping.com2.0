@@ -88,7 +88,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         margin: 0 -0.05em;
         animation: loading-animation 0.7s infinite alternate;
         @for $i from 1 through 6 {
-          &:nth-child(#{$i + 1}) {
+          &:nth-of-type(#{$i + 1}) {
             animation-delay: #{$i * 0.1}s;
           }
         }
