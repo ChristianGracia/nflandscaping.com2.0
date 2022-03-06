@@ -31,12 +31,11 @@ const landscapingImages: string[] = [
 const galleryItems: GalleryItem[] = [
   {
     title: "Landscaping / Construction",
-    imageUrl: "https://www.apeaceofmindlandscape.com/files/Landscaping-1.jpg",
+    imageUrl: "GalleryImageL.jpg",
   },
   {
     title: "Home Improvement",
-    imageUrl:
-      "https://www.build-review.com/wp-content/uploads/2019/12/Home-Renovation.jpg",
+    imageUrl: "GalleryImageHI.jpg",
   },
 ];
 
@@ -60,7 +59,7 @@ const Gallery: NextPage = () => {
     return (
       <GallerySectionCard
         key={index}
-        onClick={() => selectService(item.title)}
+        handleClick={() => selectService(item.title)}
         item={item}
       />
     );

@@ -9,10 +9,10 @@ interface Item {
 
 interface GallerySectionCardProps {
   item: Item;
-  onClick: (title: string) => void;
+  handleClick: (title: any) => any;
 }
 
-const GallerySectionCard = ({ item }: GallerySectionCardProps) => {
+const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
   const StyledContainer = styled.div(
     `
     .menu-item {
@@ -40,9 +40,11 @@ const GallerySectionCard = ({ item }: GallerySectionCardProps) => {
     
       .background-image {
         width: 100%;
+        height: 300px;
         // height: 130%;
         // background-position: center;
         // background-size: contain;
+        background-image: url(images/gallery-section/${item.imageUrl});
       }
     
       .content {
@@ -73,13 +75,10 @@ const GallerySectionCard = ({ item }: GallerySectionCardProps) => {
     `
   );
   return (
-    <StyledContainer>
+    <StyledContainer onClick={handleClick}>
       <Box className="menu-item">
         <Box
           className="background-image"
-          style={{
-            backgroundImage: `url(${item.imageUrl})`,
-          }}
         />
         <Box className="content">
           <Typography component="h4" className="title">
