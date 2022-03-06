@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 import NavLinkButton from "../navBarButton";
 import SideBar from "./sidebar";
 import { NAV_LINKS } from "../../utility/constants";
-import Image from 'next/image'
+import Image from "next/image";
 
 const navLinks = NAV_LINKS;
 

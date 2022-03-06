@@ -1,11 +1,11 @@
 import { useState, createElement } from "react";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
-import Image from 'next/image'
+import Image from "next/image";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import MailIcon from "@mui/icons-material/Mail";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
@@ -66,16 +66,17 @@ const SideBar = () => {
       <Divider />
       <List>
         {["Services", "About Us", "Gallery", "Contact"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {/* <DesignServicesIcon />  */}
-              {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
-            </ListItemIcon>
+          <ListItem button key={index}>
             <NavLinkButton
               to={navLinks[text as keyof typeof navLinks].url}
               newTab={false}
             >
-              {text}
+              <Box display="flex" flexDirection="row" alignItems="center">
+                {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
+                <Typography component="span" sx={{ m: 2 }}>
+                  {text}
+                </Typography>
+              </Box>
             </NavLinkButton>
           </ListItem>
         ))}

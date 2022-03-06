@@ -89,6 +89,7 @@ const ContactForm = (props: any) => {
                 variant="standard"
                 value={item.value}
                 onChange={handleChange}
+                autoComplete={item.label}
               />
             );
           })}
