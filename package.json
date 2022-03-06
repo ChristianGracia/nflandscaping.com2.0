@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "push-s": "heroku container:push web --app cg-playground",
+    "release-s": "heroku container:release web --app cg-playground"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
