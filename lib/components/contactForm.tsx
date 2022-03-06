@@ -6,7 +6,7 @@ import Alert from "@mui/material/Alert";
 import SendEmail from "../services/emailService";
 import { CONTACT_TEXT } from "../utility/constants";
 import Typography from "@mui/material/Typography";
-
+import styled from "@emotion/styled";
 const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
@@ -29,42 +29,53 @@ const ContactForm = (props: any) => {
     }
   };
 
+  const StyledContainer = styled.div(``);
+
   const renderTextInput = () => {
     return (
-      <>
+      <StyledContainer>
         <Typography component="p">{CONTACT_TEXT.ESTIMATE_TEXT}</Typography>
-        <TextField
-          id="name-input"
-          label="Name"
-          type="text"
-          autoComplete="name"
-          variant="standard"
-          onChange={(e: any) => setNameValue(e.target.value)}
-        />
-        <TextField
-          id="phone-input"
-          label="Phone Number"
-          type="phone"
-          autoComplete="phone"
-          variant="standard"
-          onChange={(e: any) => setPhoneValue(e.target.value)}
-        />
-        <TextField
-          id="phone-input"
-          label="Message"
-          type="text"
-          variant="standard"
-          onChange={(e: any) => setMessageValue(e.target.value)}
-        />
-        <Button
-          disabled={!nameValue || !phoneValue || !messageValue}
-          type="submit"
-          variant="contained"
-          className="contact-submit-button"
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <TextField
+            id="name-input"
+            label="Name"
+            type="text"
+            autoComplete="name"
+            variant="standard"
+            onChange={(e: any) => setNameValue(e.target.value)}
+          />
+          <TextField
+            id="phone-input"
+            label="Phone Number"
+            type="phone"
+            autoComplete="phone"
+            variant="standard"
+            onChange={(e: any) => setPhoneValue(e.target.value)}
+          />
+          <TextField
+            id="phone-input"
+            label="Message"
+            type="text"
+            variant="standard"
+            onChange={(e: any) => setMessageValue(e.target.value)}
+          />
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          sx={{ m: 3 }}
         >
-          Submit
-        </Button>
-      </>
+          <Button
+            disabled={!nameValue || !phoneValue || !messageValue}
+            type="submit"
+            variant="contained"
+            className="contact-submit-button"
+          >
+            Submit
+          </Button>
+        </Box>
+      </StyledContainer>
     );
   };
 
