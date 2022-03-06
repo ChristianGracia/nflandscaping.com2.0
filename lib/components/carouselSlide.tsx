@@ -28,7 +28,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   `;
   return (
     <StyledContainer>
-      {/* <p>{props.item.title}</p> */}
+      {/* <Typography component="p">{props.item.title}</Typography> */}
       {item.description && (
         <Typography component="p">{item.description}</Typography>
       )}

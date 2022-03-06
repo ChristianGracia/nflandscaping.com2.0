@@ -80,9 +80,7 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
   return (
     <StyledContainer onClick={handleClick}>
       <Box className="menu-item">
-        <Box
-          className="background-image"
-        />
+        <Box className="background-image" />
         <Box className="content">
           <Typography component="h4" className="title">
             {item.title}

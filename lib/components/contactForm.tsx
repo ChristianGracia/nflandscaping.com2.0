@@ -30,10 +30,13 @@ const ContactForm = (props: any) => {
     }
   };
 
+  const test1 = () => {
+    console.log("clic");
+  };
+
   const renderTextInput = () => {
     return (
       <>
-        {" "}
         <TextField
           id="name-input"
           label="Name"
@@ -45,7 +48,7 @@ const ContactForm = (props: any) => {
         <TextField
           id="phone-input"
           label="Phone Number"
-          type="text"
+          type="phone"
           autoComplete="phone"
           variant="standard"
           onChange={(e: any) => setPhoneValue(e.target.value)}
