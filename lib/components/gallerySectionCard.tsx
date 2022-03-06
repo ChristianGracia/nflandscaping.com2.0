@@ -16,7 +16,7 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
   const StyledContainer = styled.div(
     `
     .menu-item {
-      width: 30vw;
+      width: 40vw;
       min-width: 300px;
       height: 300px;
       flex: 1 1 auto;
@@ -24,7 +24,7 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
       align-items: center;
       justify-content: center;
       border: 1px solid black;
-      margin: 0 7.5px 15px;
+      margin: 0 20px;
       overflow: hidden;
     
       &:hover {
@@ -39,8 +39,8 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
       }
     
       .background-image {
-        width: 300px;
-        // max-width: 500px;
+        width: 40vw;
+        min-width: 300px;
         height: 300px;
         // height: 80vh;
         // height: 130%;
