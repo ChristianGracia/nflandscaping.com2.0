@@ -101,13 +101,13 @@ const Gallery: NextPage = () => {
         )}
         {showHomeImpImages && (
           <ImageGrid
-            prepend={"images/gallery/"}
+            prepend={"images/gallery-images/"}
             images={homeImpImages}
           ></ImageGrid>
         )}
         {showLandscapingImages && (
           <ImageGrid
-            prepend={"images/gallery/"}
+            prepend={"images/gallery-images/"}
             images={landscapingImages}
           ></ImageGrid>
         )}

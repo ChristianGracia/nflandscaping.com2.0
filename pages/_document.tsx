@@ -21,7 +21,13 @@ export default class MyDocument extends Document {
             name="keywords"
             content="landscaping property construction rhode RI mass junk nflandscaping"
           />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/favico/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favico/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favico/favicon-16x16.png" />
+          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+          <meta name="msapplication-TileColor" content="#ffc40d" />
+          <meta name="theme-color" content="#ffffff" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

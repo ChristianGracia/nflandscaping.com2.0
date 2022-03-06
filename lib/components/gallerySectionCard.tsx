@@ -39,12 +39,15 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
       }
     
       .background-image {
-        width: 100%;
+        width: 300px;
+        // max-width: 500px;
         height: 300px;
+        // height: 80vh;
         // height: 130%;
-        // background-position: center;
-        // background-size: contain;
-        background-image: url(images/gallery-section/${item.imageUrl});
+        background-image: url(images/gallery-sections/${item.imageUrl});
+        background-position: center;
+        background-size: center;
+        background-repeat: no-repeat;
       }
     
       .content {

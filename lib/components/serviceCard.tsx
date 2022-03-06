@@ -54,7 +54,7 @@ const ServiceCard = ({ item }: ServiceCardProps) => {
           // height="140"
           width="100%"
           max-width=""
-          image={`images/${item.image}`}
+          image={`images/services-list/${item.image}`}
           alt="service image"
         />
         <CardContent>
