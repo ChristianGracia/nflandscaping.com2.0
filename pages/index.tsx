@@ -1,10 +1,8 @@
-import Button from "@mui/material/Button";
 import type { NextPage } from "next";
 import Carousel from "react-material-ui-carousel";
 import styled from "@emotion/styled";
 import { CAROUSEL_SLIDES } from "../lib/utility/constants";
 import CarouselSlide from "../lib/components/carouselSlide";
-import { relative } from "path";
 
 const Home: NextPage = () => {
   const carouselSlides = CAROUSEL_SLIDES;
@@ -14,8 +12,8 @@ const Home: NextPage = () => {
       <main className="main">
         <StyledContainer>
           <Carousel
-            autoPlay={false}
-            interval={2000}
+            // autoPlay={false}
+            interval={3000}
             stopAutoPlayOnHover={true}
             indicatorIconButtonProps={{
               style: {
