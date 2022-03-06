@@ -41,7 +41,7 @@ const StyledContainer = styled.div`
       display: flex;
       flex-direction: row;
       .nav-item {
-        margin-right: 10px;
+        margin: 0 8px;
       }
     }
     .menu-icon {
@@ -51,13 +51,13 @@ const StyledContainer = styled.div`
       justify-content: flex-end;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 650px) {
       .nav-col {
         display: none;
       }
     }
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 650px) {
       .menu-icon {
         display: none;
       }
@@ -74,7 +74,7 @@ const Header = () => {
             newTab={false}
             to={navLinks[item as keyof typeof navLinks].url}
           >
-            <Typography>{item}</Typography>
+            <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>{item}</Typography>
           </NavLinkButton>
         </Grid>
       );
