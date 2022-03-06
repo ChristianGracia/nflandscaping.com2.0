@@ -65,11 +65,9 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
         font-weight: bold;
         margin-bottom: 6px;
         font-size: 22px;
-        color: #4a4a4a;
       }
     
       .subtitle {
-        font-weight: lighter;
         font-size: 16px;
       }
     }
