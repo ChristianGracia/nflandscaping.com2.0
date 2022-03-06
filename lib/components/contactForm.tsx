@@ -11,7 +11,7 @@ const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
   const [messageValue, setMessageValue] = useState<string>("");
-  const [autoFocus, setAutoFocus] = useState<number[]>([0, 0, 0]);
+  const [autoFocus, setAutoFocus] = useState<boolean[]>([false, false, false]);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formError, setFormError] = useState<boolean>(false);
   const submitForm = async (e: any) => {
@@ -63,7 +63,7 @@ const ContactForm = (props: any) => {
       },
       {
         id: "phone-input",
-        label: "Phone Numbe",
+        label: "Phone Number",
         type: "phone",
         value: phoneValue,
       },
