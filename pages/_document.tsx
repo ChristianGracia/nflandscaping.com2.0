@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
         <title>Nature&apos;s Frontier Landscaping - Serving RI and Mass</title>
         <Head>
           <link rel="manifest" href="./manifest.json" />
+          <link rel="icon" type="image/x-icon" href="/images/favico/favicon.ico" />
           <meta
             name="description"
             content="Natures Frontier Landscaping - Serving RI and Mass"
