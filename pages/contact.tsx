@@ -10,7 +10,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 const Contact: NextPage = () => {
   return (
     <div>
-      <main>
+      <main className="main">
         <PageHeader title="Contact Us" />
         <Box display="flex" flexDirection="column" alignItems="center">
           <Box

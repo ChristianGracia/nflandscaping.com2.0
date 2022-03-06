@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 const About: NextPage = () => {
   return (
     <div>
-      <main>
+      <main className="main">
         <PageHeader title="About Us" />
         <Typography
           sx={{ textAlign: "center", m: 3, fontSize: 20 }}
