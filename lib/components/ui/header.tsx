@@ -74,7 +74,9 @@ const Header = () => {
             newTab={false}
             to={navLinks[item as keyof typeof navLinks].url}
           >
-            <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>{item}</Typography>
+            <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>
+              {item}
+            </Typography>
           </NavLinkButton>
         </Grid>
       );
