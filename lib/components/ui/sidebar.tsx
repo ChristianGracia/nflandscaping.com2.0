@@ -87,7 +87,7 @@ const SideBar = () => {
   return (
     <>
       <Button onClick={toggleDrawer("left", true)}>
-        <MenuIcon sx={{color: 'black'}}/>
+        <MenuIcon sx={{ color: "black" }} />
       </Button>
       <SwipeableDrawer
         anchor={"left"}
