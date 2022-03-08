@@ -59,7 +59,7 @@ const SideBar = () => {
         justifyContent="center"
         sx={{ width: 250, margin: "20px 0" }}
       >
-        <NavLinkButton to="/" newTab={false}>
+        <NavLinkButton to="/home" newTab={false}>
           <Image src="/logo.png" height={50} width={200} alt="nfl logo" />
         </NavLinkButton>
       </Box>

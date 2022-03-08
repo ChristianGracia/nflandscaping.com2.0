@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import type { NextPage } from "next";
+import Main from "../lib/components/ui/main";
 import PageHeader from "../lib/components/pageHeader";
 import ServiceCard from "../lib/components/serviceCard";
 import { SERVICES } from "../lib/utility/constants";
@@ -35,8 +36,8 @@ const icons = {
 const Services: NextPage = () => {
   const services = SERVICES;
   return (
-    <div>
-      <main className="main">
+    <Main>
+      <div>
         <PageHeader title="Services" />
         <Box
           display="flex"
@@ -53,8 +54,8 @@ const Services: NextPage = () => {
             />
           ))}
         </Box>
-      </main>
-    </div>
+      </div>
+    </Main>
   );
 };
 

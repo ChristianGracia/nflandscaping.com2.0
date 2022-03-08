@@ -5,6 +5,7 @@ import ImageGrid from "../lib/components/imageGrid";
 import PageHeader from "../lib/components/pageHeader";
 import GallerySectionCard from "../lib/components/gallerySectionCard";
 import Box from "@mui/material/Box";
+import Main from "../lib/components/ui/main";
 
 interface GalleryItem {
   title: string;
@@ -71,8 +72,8 @@ const Gallery: NextPage = () => {
     setShowSelectionButtons(true);
   };
   return (
-    <div>
-      <main className="main">
+    <Main>
+      <div>
         <PageHeader
           title={
             showSelectionButtons
@@ -113,8 +114,8 @@ const Gallery: NextPage = () => {
             ></ImageGrid>
           )}
         </Box>
-      </main>
-    </div>
+      </div>
+    </Main>
   );
 };
 

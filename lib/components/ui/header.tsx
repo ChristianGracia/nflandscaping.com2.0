@@ -102,7 +102,7 @@ const Header = () => {
     <StyledContainer>
       <AppBar sx={{ backgroundColor: "white" }} elevation={0} position="fixed">
         <Toolbar>
-          <NavLinkButton to="/" newTab={false}>
+          <NavLinkButton to="/home" newTab={false}>
             <Image src="/logo.png" height={35} width={120} alt="nfl logo" />
           </NavLinkButton>
           <Box

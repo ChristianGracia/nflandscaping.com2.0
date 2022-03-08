@@ -73,8 +73,8 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       &:hover {
         background-color: white;
       }
-      padding: 6px;
-      border-radius: 5px;
+      // padding: 6px;
+      // border-radius: 5px;
   }
     }
 

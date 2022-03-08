@@ -5,11 +5,12 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import Main from "../lib/components/ui/main";
 
 const About: NextPage = () => {
   return (
     <div>
-      <main className="main">
+      <Main>
         <PageHeader title="About Us" />
         <Typography
           sx={{ textAlign: "center", m: 3, fontSize: 20 }}
@@ -57,7 +58,7 @@ const About: NextPage = () => {
         >
           {ABOUT_TEXT.WORK_TEXT}
         </Typography>
-      </main>
+      </Main>
     </div>
   );
 };
