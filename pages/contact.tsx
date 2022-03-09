@@ -51,12 +51,11 @@ const Contact: NextPage = () => {
                   </Typography>
                 </NavLinkButton>
               </Box>
-              <Typography component="p" sx={{ m: 3 }}>
+              <ContactForm />
+              <Typography component="p" sx={{ m: 3, fontSize: 25 }}>
                 Available 24/7
               </Typography>
             </Box>
-
-            <ContactForm />
             <Box
               display="flex"
               flexDirection="column"
