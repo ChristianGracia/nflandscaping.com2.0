@@ -1,4 +1,4 @@
-import { useState, createElement } from "react";
+import { useState, Fragment } from "react";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
@@ -90,7 +90,7 @@ const SideBar = () => {
   );
 
   return (
-    <>
+    <Fragment>
       <Button onClick={toggleDrawer("left", true)}>
         <MenuIcon sx={{ color: "black" }} />
       </Button>
@@ -102,7 +102,7 @@ const SideBar = () => {
       >
         {list("left")}
       </SwipeableDrawer>
-    </>
+    </Fragment>
   );
 };
 

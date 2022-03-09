@@ -6,7 +6,7 @@ import PageHeader from "../lib/components/pageHeader";
 import GallerySectionCard from "../lib/components/gallerySectionCard";
 import Box from "@mui/material/Box";
 import Main from "../lib/components/ui/main";
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 interface GalleryItem {
   title: string;
   imageUrl: string;
@@ -116,7 +116,7 @@ const Gallery: NextPage = () => {
               )}
             </Box>
           ) : (
-            <Button onClick={handleBackButton}>Back</Button>
+            <Button onClick={handleBackButton}><ArrowBackIosIcon />Back</Button>
           )}
           {showHomeImpImages && (
             <ImageGrid
