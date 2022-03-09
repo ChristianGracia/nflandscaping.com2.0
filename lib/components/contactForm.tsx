@@ -30,7 +30,16 @@ const ContactForm = (props: any) => {
     }
   };
 
-  const StyledContainer = styled.div(``);
+  const StyledContainer = styled.div(`
+  .estimate-text {
+    font-size: 15px;
+    text-align: center;
+    margin: 30px 0;
+    @media only screen and (min-width: 1000px) {
+      font-size: 30px;
+    }
+
+  }`);
 
   const handleChange = (e: any) => {
     e.preventDefault();
@@ -76,7 +85,9 @@ const ContactForm = (props: any) => {
     ];
     return (
       <StyledContainer>
-        <Typography component="p">{CONTACT_TEXT.ESTIMATE_TEXT}</Typography>
+        <Typography component="p" className="estimate-text">
+          {CONTACT_TEXT.ESTIMATE_TEXT}
+        </Typography>
         <Box display="flex" flexDirection="column" alignItems="center">
           {formObjArr.map((item: FormProps, index: number) => {
             return (

@@ -112,7 +112,7 @@ const Header = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Grid className="nav-col hidden" item>
+            <Grid sx={{ marginLeft: 4 }} className="nav-col hidden" item>
               {createNavLinks()}
             </Grid>
             <Grid className="nav-col" sx={{ marginTop: 1 }} item>
