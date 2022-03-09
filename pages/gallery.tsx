@@ -33,16 +33,11 @@ const landscapingImages: string[] = [
   "gallery12.PNG",
   "gallery13.JPG",
   "gallery14.JPG",
-
   "gallery17.JPG",
   "gallery18.JPG",
-
   "gallery20.JPG",
-
   "gallery21.JPG",
-
   "gallery15.JPG",
-
   "gallery10.JPG",
   "gallery22.JPG",
   "gallery23.JPG",
