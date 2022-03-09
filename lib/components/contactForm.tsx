@@ -85,7 +85,9 @@ const ContactForm = (props: any) => {
     ];
     return (
       <StyledContainer>
-        <Typography component="p" className="estimate-text">{CONTACT_TEXT.ESTIMATE_TEXT}</Typography>
+        <Typography component="p" className="estimate-text">
+          {CONTACT_TEXT.ESTIMATE_TEXT}
+        </Typography>
         <Box display="flex" flexDirection="column" alignItems="center">
           {formObjArr.map((item: FormProps, index: number) => {
             return (

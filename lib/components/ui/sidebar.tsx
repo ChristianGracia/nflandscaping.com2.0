@@ -62,27 +62,27 @@ const SideBar = () => {
         </NavLinkButton>
       </Box>
       <Divider />
-  
-        {["Services", "About Us", "Gallery", "Contact"].map((text, index) => (
-            <NavLinkButton
-              to={navLinks[text as keyof typeof navLinks].url}
-              newTab={false}
-              key={index}
-            >
-              <Box
-                display="flex"
-                flexDirection="row"
-                alignItems="center"
-                justifyContent="left"
-                sx={{ marginLeft: 2 }}
-              >
-                {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
-                <Typography component="span" sx={{ m: 2 }}>
-                  {text}
-                </Typography>
-              </Box>
-            </NavLinkButton>
-        ))}
+
+      {["Services", "About Us", "Gallery", "Contact"].map((text, index) => (
+        <NavLinkButton
+          to={navLinks[text as keyof typeof navLinks].url}
+          newTab={false}
+          key={index}
+        >
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="left"
+            sx={{ marginLeft: 2 }}
+          >
+            {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
+            <Typography component="span" sx={{ m: 2 }}>
+              {text}
+            </Typography>
+          </Box>
+        </NavLinkButton>
+      ))}
     </Box>
   );
 

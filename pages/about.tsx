@@ -6,14 +6,33 @@ import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import Main from "../lib/components/ui/main";
+import styled from "@emotion/styled";
 
 const About: NextPage = () => {
+  const StyledContainer = styled.div(`
+  .estimate-text {
+    text-align: center;
+    font-size: 18px;
+    @media only screen and (min-width: 600px) {
+      font-size: 25px;
+    }
+    @media only screen and (min-width: 1000px) {
+      font-size: 30px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    font-size: 40px;
+  }
+
+  }`);
+
   return (
-    <div>
+    <StyledContainer>
       <Main>
         <PageHeader title="About Us" />
         <Box sx={{ margin: 6 }}>
           <Typography
+            className="estimate-text"
             sx={{ textAlign: "center", m: 1, fontSize: 30 }}
             component="p"
           >
@@ -70,7 +89,7 @@ const About: NextPage = () => {
           </Typography>
         </Box>
       </Main>
-    </div>
+    </StyledContainer>
   );
 };
 
