@@ -13,12 +13,14 @@ interface GalleryItem {
 }
 
 const homeImpImages: string[] = [
-  "gallery1aa.jpeg",
-  "gallery5.JPG",
-  "gallery6aa.JPG",
-  "gallery7.JPG",
-  "gallery8.JPG",
-  "gallery9.JPG",
+  "gallery6a.JPG",
+  "gallery1a.JPG",
+  "gallery2.JPG",
+  "gallery4.JPG",
+  "gallery4a.JPG",
+  "gallery11.JPG",
+  "gallery16.JPG",
+  "gallery3.JPG",
 ];
 const landscapingImages: string[] = [
   "gallery1aa.jpeg",
@@ -27,6 +29,26 @@ const landscapingImages: string[] = [
   "gallery7.JPG",
   "gallery8.JPG",
   "gallery9.JPG",
+  "gallery11.PNG",
+  "gallery12.PNG",
+  "gallery13.JPG",
+  "gallery14.JPG",
+
+  "gallery17.JPG",
+  "gallery18.JPG",
+
+  "gallery20.JPG",
+
+  "gallery21.JPG",
+
+  "gallery15.JPG",
+
+  "gallery10.JPG",
+  "gallery22.JPG",
+  "gallery23.JPG",
+  "gallery24.jpeg",
+  "gallery25.JPG",
+  "gallery34.jpeg",
 ];
 
 const galleryItems: GalleryItem[] = [

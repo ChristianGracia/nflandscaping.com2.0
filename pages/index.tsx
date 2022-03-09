@@ -71,7 +71,8 @@ const Landing: NextPage = () => {
               >
                 <Image
                   src="/logo.png"
-                  height={110} width={310}
+                  height={110}
+                  width={310}
                   alt="nfl logo"
                 />
               </Box>
