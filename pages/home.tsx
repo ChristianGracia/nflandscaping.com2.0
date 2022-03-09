@@ -7,7 +7,9 @@ import Main from "../lib/components/ui/main";
 
 const Home: NextPage = () => {
   const carouselSlides = CAROUSEL_SLIDES;
-  const StyledContainer = styled.div``;
+  const StyledContainer = styled.div`
+    // max-height: 100vh;
+  `;
   return (
     <Main showFooter={false}>
       <div>
@@ -20,7 +22,7 @@ const Home: NextPage = () => {
               style: {
                 position: "relative",
                 color: "grey",
-                top: -40,
+                top: -20,
               },
             }}
             activeIndicatorIconButtonProps={{

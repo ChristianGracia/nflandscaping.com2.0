@@ -22,7 +22,7 @@ const Contact: NextPage = () => {
               margin: "0 auto",
               paddingBottom: 2,
             }}
-            elevation={24}
+            elevation={15}
           >
             <Box
               display="flex"
@@ -51,12 +51,11 @@ const Contact: NextPage = () => {
                   </Typography>
                 </NavLinkButton>
               </Box>
-              <Typography component="p" sx={{ m: 3 }}>
+              <ContactForm />
+              <Typography component="p" sx={{ m: 3, fontSize: 25 }}>
                 Available 24/7
               </Typography>
             </Box>
-
-            <ContactForm />
             <Box
               display="flex"
               flexDirection="column"

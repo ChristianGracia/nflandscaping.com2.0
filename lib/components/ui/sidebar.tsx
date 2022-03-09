@@ -1,10 +1,8 @@
-import { useState, createElement } from "react";
+import { useState, Fragment } from "react";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
-import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import MailIcon from "@mui/icons-material/Mail";
@@ -64,28 +62,32 @@ const SideBar = () => {
         </NavLinkButton>
       </Box>
       <Divider />
-      <List>
-        {["Services", "About Us", "Gallery", "Contact"].map((text, index) => (
-          <ListItem button key={index}>
-            <NavLinkButton
-              to={navLinks[text as keyof typeof navLinks].url}
-              newTab={false}
-            >
-              <Box display="flex" flexDirection="row" alignItems="center" justifyContent="left">
-                {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
-                <Typography component="span" sx={{ m: 2 }}>
-                  {text}
-                </Typography>
-              </Box>
-            </NavLinkButton>
-          </ListItem>
-        ))}
-      </List>
+
+      {["Services", "About Us", "Gallery", "Contact"].map((text, index) => (
+        <NavLinkButton
+          to={navLinks[text as keyof typeof navLinks].url}
+          newTab={false}
+          key={index}
+        >
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="left"
+            sx={{ marginLeft: 2 }}
+          >
+            {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
+            <Typography component="span" sx={{ m: 2 }}>
+              {text}
+            </Typography>
+          </Box>
+        </NavLinkButton>
+      ))}
     </Box>
   );
 
   return (
-    <>
+    <Fragment>
       <Button onClick={toggleDrawer("left", true)}>
         <MenuIcon sx={{ color: "black" }} />
       </Button>
@@ -97,7 +99,7 @@ const SideBar = () => {
       >
         {list("left")}
       </SwipeableDrawer>
-    </>
+    </Fragment>
   );
 };
 
