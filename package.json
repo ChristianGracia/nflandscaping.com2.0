@@ -11,8 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "push-s": "heroku container:push web --app cg-playground",
-    "release-s": "heroku container:release web --app cg-playground"
+    "push-s": "heroku container:push web --app nflandscaping",
+    "release-s": "heroku container:release web --app nflandscaping"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
