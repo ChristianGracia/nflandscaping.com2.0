@@ -8,10 +8,11 @@ import { PHONE_NUMBER, EMAIL } from "../lib/utility/constants";
 import MailIcon from "@mui/icons-material/Mail";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import NavLinkButton from "../lib/components/navBarButton";
+import Main from "../lib/components/ui/main";
 const Contact: NextPage = () => {
   return (
-    <div>
-      <main className="main">
+    <Main>
+      <div>
         <PageHeader title="Contact Us" />
         <Box sx={{ paddingBottom: 10 }}>
           <Paper
@@ -73,8 +74,8 @@ const Contact: NextPage = () => {
             </Box>
           </Paper>
         </Box>
-      </main>
-    </div>
+      </div>
+    </Main>
   );
 };
 

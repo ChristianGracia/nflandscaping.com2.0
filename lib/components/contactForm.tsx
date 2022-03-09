@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -11,6 +11,7 @@ const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
   const [messageValue, setMessageValue] = useState<string>("");
+  const [autoFocus, setAutoFocus] = useState<boolean[]>([false, false, false]);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formError, setFormError] = useState<boolean>(false);
   const submitForm = async (e: any) => {
@@ -31,34 +32,67 @@ const ContactForm = (props: any) => {
 
   const StyledContainer = styled.div(``);
 
+  const handleChange = (e: any) => {
+    e.preventDefault();
+    const value = e.target.value;
+    if (e.target.id === "name-input") {
+      setNameValue(value);
+      setAutoFocus([true, false, false]);
+    } else if (e.target.id === "phone-input") {
+      setPhoneValue(value);
+      setAutoFocus([false, true, false]);
+    } else if (e.target.id === "message-input") {
+      setMessageValue(value);
+      setAutoFocus([false, false, true]);
+    }
+  };
+
   const renderTextInput = () => {
+    interface FormProps {
+      id: string;
+      label: string;
+      type: string;
+      value: string;
+    }
+    const formObjArr: FormProps[] = [
+      {
+        id: "name-input",
+        label: "Name",
+        type: "text",
+        value: nameValue,
+      },
+      {
+        id: "phone-input",
+        label: "Phone Number",
+        type: "phone",
+        value: phoneValue,
+      },
+      {
+        id: "message-input",
+        label: "Message",
+        type: "text",
+        value: messageValue,
+      },
+    ];
     return (
       <StyledContainer>
         <Typography component="p">{CONTACT_TEXT.ESTIMATE_TEXT}</Typography>
         <Box display="flex" flexDirection="column" alignItems="center">
-          <TextField
-            id="name-input"
-            label="Name"
-            type="text"
-            autoComplete="name"
-            variant="standard"
-            onChange={(e: any) => setNameValue(e.target.value)}
-          />
-          <TextField
-            id="phone-input"
-            label="Phone Number"
-            type="phone"
-            autoComplete="phone"
-            variant="standard"
-            onChange={(e: any) => setPhoneValue(e.target.value)}
-          />
-          <TextField
-            id="phone-input"
-            label="Message"
-            type="text"
-            variant="standard"
-            onChange={(e: any) => setMessageValue(e.target.value)}
-          />
+          {formObjArr.map((item: FormProps, index: number) => {
+            return (
+              <TextField
+                autoFocus={autoFocus[index]}
+                key={index}
+                id={item.id}
+                label={item.label}
+                type={item.type}
+                variant="standard"
+                value={item.value}
+                onChange={handleChange}
+                autoComplete={item.label}
+              />
+            );
+          })}
         </Box>
         <Box
           display="flex"
@@ -94,7 +128,6 @@ const ContactForm = (props: any) => {
         "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
       noValidate
-      autoComplete="off"
       display="flex"
       flexDirection="column"
       alignItems="center"

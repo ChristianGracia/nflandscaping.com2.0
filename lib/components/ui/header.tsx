@@ -9,6 +9,7 @@ import styled from "@emotion/styled";
 import NavLinkButton from "../navBarButton";
 import SideBar from "./sidebar";
 import { NAV_LINKS } from "../../utility/constants";
+import Image from "next/image";
 
 const navLinks = NAV_LINKS;
 
@@ -101,8 +102,8 @@ const Header = () => {
     <StyledContainer>
       <AppBar sx={{ backgroundColor: "white" }} elevation={0} position="fixed">
         <Toolbar>
-          <NavLinkButton to="/" newTab={false}>
-            <img src="logo.png" width="120px" alt="nfl logo" />
+          <NavLinkButton to="/home" newTab={false}>
+            <Image src="/logo.png" height={35} width={120} alt="nfl logo" />
           </NavLinkButton>
           <Box
             className="nav-container"

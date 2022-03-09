@@ -11,8 +11,6 @@ import "@fontsource/roboto/700.css";
 import createEmotionCache from "../lib/utility/createEmotionCache";
 import lightThemeOptions from "../lib/styles/theme/lightThemeOptions";
 import "../lib/styles/globals.css";
-import Header from "../lib/components/ui/header";
-import Footer from "../lib/components/ui/footer";
 interface appProps extends AppProps {
   emotionCache?: EmotionCache;
 }
@@ -28,9 +26,7 @@ const app: FunctionComponent<appProps> = (props) => {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={lightTheme}>
         <CssBaseline />
-        <Header />
         <Component {...pageProps} />
-        <Footer />
       </ThemeProvider>
     </CacheProvider>
   );
