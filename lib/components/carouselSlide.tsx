@@ -18,7 +18,9 @@ interface CarouselSlideProps {
 const CarouselSlide = ({ item }: CarouselSlideProps) => {
   const StyledContainer = styled.div`
     width: 100%;
-    height: calc(100vh - 89px);
+    height: calc(100vh - 56px);
+    margin-bottom: -32.8px;
+    overflow-y: hidden;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(/images/carousel-images/${item.image});
     background-position: center;
@@ -26,10 +28,10 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     .button-div {
       max-width: 200px;
-      margin: 0 auto;
+      margin: 50px auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -50,6 +52,9 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       @media only screen and (min-width: 650px) {
         font-size: 18px;
       }
+      @media only screen and (min-width: 1300px) {
+        font-size: 30px;
+      }
     }
     .item-title {
       font-weight: bold;
@@ -57,7 +62,10 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       text-align: center;
       font-size: 25px;
       @media only screen and (min-width: 650px) {
-        font-size: 40px;
+        font-size: 45px;
+      }
+      @media only screen and (min-width: 1300px) {
+        font-size: 60px;
       }
     }
     .finance-text {
@@ -73,8 +81,8 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       &:hover {
         background-color: white;
       }
-      // padding: 6px;
-      // border-radius: 5px;
+      padding: 6px;
+      border-radius: 5px;
   }
     }
 
@@ -130,7 +138,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   };
   return (
     <StyledContainer>
-      <Box display="flex" flexDirection="column" alignItems="center">
+      <Box display="flex" flexDirection="column" alignItems="center" sx={{marginTop: "25vh"}}>
         <Typography component="h2" className="item-title">
           {item.title}
         </Typography>
@@ -141,7 +149,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         )}
       </Box>
 
-      <Box className="button-div">
+      <Box className="button-div" sx={{marginTop: 10}}>
         <Button variant="contained" className="image-button call-button">
           <Box display="flex" flexDirection="row" alignItems="center">
             <LocalPhoneIcon />
@@ -156,9 +164,6 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
           </NavLinkButton>
         </Button>
       </Box>
-      {/* <Typography component="p" className="finance-text">
-        0% In-house Financing Available
-      </Typography> */}
       <Box
         display="flex"
         flexDirection="row"

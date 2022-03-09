@@ -24,12 +24,6 @@ const Landing: NextPage = () => {
       margin-top: 12vh;
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      // justify-content: center;
-    }
-
     .quote {
       color: white;
       font-size: 20px;
@@ -65,9 +59,9 @@ const Landing: NextPage = () => {
           <Box
             className="backgroundImage"
           >
-            <Box className="container" display="flex" flexDirection="row" alignItems="center"  justifyContent="center">
-              <Box  sx={{marginTop: 10}}>
-            <Image src="/logo.png" height={100} width={290} alt="nfl logo"/>
+            <Box className="container" display="flex" flexDirection="column" alignItems="center"  justifyContent="center">
+              <Box  sx={{position: 'relative', width: '90vw', height: "20vh", marginTop: 10}}>
+                  <Image src="/logo.png"    layout="fill" objectFit="contain" alt="nfl logo"/>
               </Box>
               <Typography className="quote" component="span"  sx={{m: 1}}>
                 “We see our customers as invited guests to a party, and we are
