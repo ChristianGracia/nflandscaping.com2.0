@@ -8,8 +8,7 @@ import Main from "../lib/components/ui/main";
 const Home: NextPage = () => {
   const carouselSlides = CAROUSEL_SLIDES;
   const StyledContainer = styled.div`
-  // max-height: 100vh;
-
+    // max-height: 100vh;
   `;
   return (
     <Main showFooter={false}>

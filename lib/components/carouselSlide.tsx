@@ -138,7 +138,12 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   };
   return (
     <StyledContainer>
-      <Box display="flex" flexDirection="column" alignItems="center" sx={{marginTop: "25vh"}}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        sx={{ marginTop: "23vh" }}
+      >
         <Typography component="h2" className="item-title">
           {item.title}
         </Typography>
@@ -149,7 +154,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         )}
       </Box>
 
-      <Box className="button-div" sx={{marginTop: 10}}>
+      <Box className="button-div" sx={{ marginTop: 10 }}>
         <Button variant="contained" className="image-button call-button">
           <Box display="flex" flexDirection="row" alignItems="center">
             <LocalPhoneIcon />

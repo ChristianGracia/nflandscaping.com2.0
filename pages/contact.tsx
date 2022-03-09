@@ -22,7 +22,7 @@ const Contact: NextPage = () => {
               margin: "0 auto",
               paddingBottom: 2,
             }}
-            elevation={24}
+            elevation={15}
           >
             <Box
               display="flex"

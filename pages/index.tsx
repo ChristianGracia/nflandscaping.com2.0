@@ -56,14 +56,30 @@ const Landing: NextPage = () => {
     <div>
       <main>
         <StyledContainer>
-          <Box
-            className="backgroundImage"
-          >
-            <Box className="container" display="flex" flexDirection="column" alignItems="center"  justifyContent="center">
-              <Box  sx={{position: 'relative', width: '90vw', height: "20vh", marginTop: 10}}>
-                  <Image src="/logo.png"    layout="fill" objectFit="contain" alt="nfl logo"/>
+          <Box className="backgroundImage">
+            <Box
+              className="container"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "90vw",
+                  height: "20vh",
+                  marginTop: 10,
+                }}
+              >
+                <Image
+                  src="/logo.png"
+                  layout="fill"
+                  objectFit="contain"
+                  alt="nfl logo"
+                />
               </Box>
-              <Typography className="quote" component="span"  sx={{m: 1}}>
+              <Typography className="quote" component="span" sx={{ m: 1 }}>
                 “We see our customers as invited guests to a party, and we are
                 the hosts. It’s our job to make the customer experience a little
                 bit better.”
@@ -71,12 +87,13 @@ const Landing: NextPage = () => {
               <Typography className="quoteSign" component="span">
                 -Jeff Bezos, Founder of Amazon
               </Typography>
-                <Button variant="contained"
-                  className="landingButton"
-                  onClick={() => (window.location.href = "/home")}
-                >
-                  <Typography component="span">Join the Party</Typography>
-                </Button>
+              <Button
+                variant="contained"
+                className="landingButton"
+                onClick={() => (window.location.href = "/home")}
+              >
+                <Typography component="span">Join the Party</Typography>
+              </Button>
             </Box>
           </Box>
         </StyledContainer>

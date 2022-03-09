@@ -12,20 +12,22 @@ const About: NextPage = () => {
     <div>
       <Main>
         <PageHeader title="About Us" />
-        <Typography
-          sx={{ textAlign: "center", m: 3, fontSize: 20 }}
-          component="h4"
+        <Box sx={{ margin: 6 }}>
+          <Typography
+            sx={{ textAlign: "center", m: 1, fontSize: 30 }}
+            component="p"
+          >
+            {ABOUT_TEXT.CUT_CORNER_TEXT}
+          </Typography>
+        </Box>
+        {/* <Paper sx={{ maxWidth: "90vw", margin: "0 auto", p: 2 }}> */}
+        <Box
+          display="flex"
+          justifyContent="center"
+          sx={{ maxWidth: 500, margin: "10px auto" }}
         >
-          {ABOUT_TEXT.CUT_CORNER_TEXT}
-        </Typography>
-        <Paper sx={{ maxWidth: "90vw", margin: "0 auto", p: 2 }}>
-          <Box sx={{ maxWidth: 500, margin: "0 auto" }}>
-            <img
-              src="images/about-us.jpg"
-              width="100%"
-              alt="Picture of founder"
-            />
-            {/* <Image
+          <img src="images/about-us.jpg" width="95%" alt="Picture of founder" />
+          {/* <Image
               src="/images/about-us.jpg"
               layout={'fill'}
               
@@ -33,8 +35,9 @@ const About: NextPage = () => {
              
               alt="Picture of founder"
             /> */}
-          </Box>
-          <Paper sx={{ maxWidth: 500, margin: "20px auto" }}>
+        </Box>
+        <Box sx={{ marginTop: 5 }}>
+          <Paper sx={{ width: 700, maxWidth: "96vw", margin: "20px auto" }}>
             <Box
               sx={{ maxWidth: 500, margin: "0 auto", p: 2 }}
               display="flex"
@@ -42,22 +45,30 @@ const About: NextPage = () => {
               alignItems="center"
               justifyContent="center"
             >
-              <Typography component="h4" sx={{ m: 2 }}>
+              <Typography component="h4" sx={{ m: 2, fontSize: 20 }}>
                 {ABOUT_TEXT.FOUNDER_QUOTE_1}
               </Typography>
-              <Typography component="h4" sx={{ m: 2 }}>
+              <Typography component="h4" sx={{ m: 2, fontSize: 20 }}>
                 {ABOUT_TEXT.FOUNDER_QUOTE_2}
               </Typography>
-              <Typography component="h4">Founder</Typography>
+              <Typography
+                component="h4"
+                sx={{ m: 2, fontSize: 14, color: "grey" }}
+              >
+                - Founder
+              </Typography>
             </Box>
           </Paper>
-        </Paper>
-        <Typography
-          sx={{ textAlign: "center", paddingBottom: 10, m: 2 }}
-          component="h4"
-        >
-          {ABOUT_TEXT.WORK_TEXT}
-        </Typography>
+        </Box>
+        {/* </Paper> */}
+        <Box sx={{ textAlign: "center", paddingBottom: 10, marginTop: 12 }}>
+          <Typography
+            sx={{ textAlign: "center", m: 2, fontSize: 20, fontWeight: "bold" }}
+            component="span"
+          >
+            {ABOUT_TEXT.WORK_TEXT}
+          </Typography>
+        </Box>
       </Main>
     </div>
   );
