@@ -71,7 +71,12 @@ const SideBar = () => {
               to={navLinks[text as keyof typeof navLinks].url}
               newTab={false}
             >
-              <Box display="flex" flexDirection="row" alignItems="center" justifyContent="left">
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                justifyContent="left"
+              >
                 {renderIcon(navLinks[text as keyof typeof navLinks].icon)}
                 <Typography component="span" sx={{ m: 2 }}>
                   {text}
