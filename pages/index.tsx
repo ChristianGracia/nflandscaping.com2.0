@@ -66,16 +66,12 @@ const Landing: NextPage = () => {
             >
               <Box
                 sx={{
-                  position: "relative",
-                  width: "90vw",
-                  height: "20vh",
                   marginTop: 10,
                 }}
               >
                 <Image
                   src="/logo.png"
-                  layout="fill"
-                  objectFit="contain"
+                  height={110} width={310}
                   alt="nfl logo"
                 />
               </Box>
