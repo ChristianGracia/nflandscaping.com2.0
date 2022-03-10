@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Landing: NextPage = () => {
   const StyledContainer = styled.div`
-    .backgroundImage {
+    .backgroundimage {
       z-index: 0;
     }
     .logo-landing {
@@ -52,10 +52,9 @@ const Landing: NextPage = () => {
     <div>
       <main>
         <StyledContainer>
-          {/* <Box className="backgroundImage"> */}
             <Image 
               src="/images/background.png"
-              className="backgroundImage"
+              className="background-image"
               alt='picture of lawn'
               layout='fill'
               objectFit='cover'
@@ -97,7 +96,6 @@ const Landing: NextPage = () => {
                 <Typography component="span">Join the Party</Typography>
               </Button>
             </Box>
-          {/* </Box> */}
         </StyledContainer>
       </main>
     </div>
