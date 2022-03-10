@@ -14,4 +14,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker login -u _ -p $HEROKU_API_KEY registry.heroku.com && heroku container:push web --app cg-playground && heroku container:release web --app cg-playground
+        run: docker login -u _ -p $HEROKU_API_KEY registry.heroku.com && heroku container:push web --app nflandscaping && heroku container:release web --app nflandscaping
