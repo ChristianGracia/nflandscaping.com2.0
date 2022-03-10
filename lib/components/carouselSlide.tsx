@@ -143,6 +143,8 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         layout='fill'
         objectFit='cover'
         objectPosition='center'
+        placeholder='blur'
+        blurDataURL={`/images/carousel-images/${item.image}`}
         priority
       />
       <Box

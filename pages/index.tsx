@@ -59,6 +59,8 @@ const Landing: NextPage = () => {
               layout='fill'
               objectFit='cover'
               objectPosition='center'
+              placeholder='blur'
+              blurDataURL="/images/background.png"
               priority
             />
             <Box
