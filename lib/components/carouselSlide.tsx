@@ -4,7 +4,7 @@ import { PHONE_NUMBER } from "../utility/constants";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import Link from "next/link";
+import Image from "next/image";
 import NavLinkButton from "./navBarButton";
 interface Item {
   image: string;
@@ -17,18 +17,14 @@ interface CarouselSlideProps {
 
 const CarouselSlide = ({ item }: CarouselSlideProps) => {
   const StyledContainer = styled.div`
-    width: 100%;
-    height: calc(100vh - 56px);
-    margin-bottom: -32.8px;
-    overflow-y: hidden;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(/images/carousel-images/${item.image});
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
     // justify-content: space-around;
+    z-index: 0;
+    .carousel-image {
+      filter: brightness(80%)
+    }
     .button-div {
       max-width: 200px;
       margin: 50px auto;
@@ -48,6 +44,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       font-weight: bold;
       text-align: center;
       margin: 5px;
+      z-index: 1;
       font-size: 16px;
       @media only screen and (min-width: 650px) {
         font-size: 18px;
@@ -60,6 +57,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       font-weight: bold;
       color: white;
       text-align: center;
+      z-index: 1;
       font-size: 25px;
       @media only screen and (min-width: 650px) {
         font-size: 45px;
@@ -138,6 +136,15 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   };
   return (
     <StyledContainer>
+      <Image 
+        src={`/images/carousel-images/${item.image}`}
+        className="carousel-image"
+        alt='carousel imagen'
+        layout='fill'
+        objectFit='cover'
+        objectPosition='center'
+        priority
+      />
       <Box
         display="flex"
         flexDirection="column"

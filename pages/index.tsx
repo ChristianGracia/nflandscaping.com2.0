@@ -7,14 +7,8 @@ import Image from "next/image";
 
 const Landing: NextPage = () => {
   const StyledContainer = styled.div`
-    .backgroundImage {
-      background-image: url("/images/background.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: brightness(80%);
-      width: 100vw;
-      height: 100vh;
+    .backgroundimage {
+      z-index: 0;
     }
     .logo-landing {
       background-size: contain;
@@ -30,6 +24,7 @@ const Landing: NextPage = () => {
       text-align: center;
       max-width: 700px;
       margin-top: 10vh;
+      z-index: 1;
     }
     .quoteSign {
       color: #3895d3;
@@ -37,6 +32,7 @@ const Landing: NextPage = () => {
       margin-top: 3vh;
       margin-bottom: 7vh;
       font-weight: bold;
+      z-index: 1;
     }
 
     .landingButton {
@@ -56,7 +52,15 @@ const Landing: NextPage = () => {
     <div>
       <main>
         <StyledContainer>
-          <Box className="backgroundImage">
+            <Image 
+              src="/images/background.png"
+              className="background-image"
+              alt='picture of lawn'
+              layout='fill'
+              objectFit='cover'
+              objectPosition='center'
+              priority
+            />
             <Box
               className="container"
               display="flex"
@@ -92,7 +96,6 @@ const Landing: NextPage = () => {
                 <Typography component="span">Join the Party</Typography>
               </Button>
             </Box>
-          </Box>
         </StyledContainer>
       </main>
     </div>
