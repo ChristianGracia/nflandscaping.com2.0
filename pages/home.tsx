@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <div>
         <StyledContainer>
           <Carousel
-            autoPlay={false}
+            autoPlay
             interval={4000}
             stopAutoPlayOnHover={true}
             indicatorIconButtonProps={{
