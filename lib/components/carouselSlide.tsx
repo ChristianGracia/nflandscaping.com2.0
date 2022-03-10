@@ -139,10 +139,11 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       <Image 
         src={`/images/carousel-images/${item.image}`}
         className="carousel-image"
-        alt='carousel imagen'
+        alt='carousel image'
         layout='fill'
         objectFit='cover'
         objectPosition='center'
+        loading="eager"
         priority
       />
       <Box
