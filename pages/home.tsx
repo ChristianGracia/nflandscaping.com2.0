@@ -10,6 +10,12 @@ const Home: NextPage = () => {
   const StyledContainer = styled.div`
     // max-height: 100vh;
   `;
+
+  const createSlides = () => {
+    return carouselSlides.map((item, i) => (
+      <CarouselSlide key={i} item={item} />
+    ))
+  }
   return (
     <Main showFooter={false}>
       <div>
@@ -31,9 +37,7 @@ const Home: NextPage = () => {
               },
             }}
           >
-            {carouselSlides.map((item, i) => (
-              <CarouselSlide key={i} item={item} />
-            ))}
+            {createSlides()}
           </Carousel>
         </StyledContainer>
       </div>
