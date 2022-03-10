@@ -143,7 +143,6 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         layout='fill'
         objectFit='cover'
         objectPosition='center'
-        loading="eager"
         priority
       />
       <Box

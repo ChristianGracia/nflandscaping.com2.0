@@ -59,7 +59,6 @@ const Landing: NextPage = () => {
               layout='fill'
               objectFit='cover'
               objectPosition='center'
-              loading="eager"
               priority
             />
             <Box
@@ -79,7 +78,7 @@ const Landing: NextPage = () => {
                   height={110}
                   width={310}
                   alt="nfl logo"
-                  loading="eager"
+                  
                   priority
                 />
               </Box>
