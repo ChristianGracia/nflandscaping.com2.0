@@ -145,7 +145,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         objectPosition='center'
         placeholder='blur'
         blurDataURL={`/images/carousel-images/${item.image}`}
-        priority
+        priority={true}
       />
       <Box
         display="flex"

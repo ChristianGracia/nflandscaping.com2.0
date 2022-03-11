@@ -10,13 +10,6 @@ const Landing: NextPage = () => {
     .backgroundimage {
       z-index: 0;
     }
-    .logo-landing {
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 20vh;
-      margin-top: 12vh;
-    }
 
     .quote {
       color: white;
@@ -61,7 +54,7 @@ const Landing: NextPage = () => {
               objectPosition='center'
               placeholder='blur'
               blurDataURL="/images/background.png"
-              priority
+              priority={true}
             />
             <Box
               className="container"
@@ -81,7 +74,7 @@ const Landing: NextPage = () => {
                   width={310}
                   alt="nfl logo"
                   
-                  priority
+                  priority={true}
                 />
               </Box>
               <Typography className="quote" component="span" sx={{ m: 1 }}>
