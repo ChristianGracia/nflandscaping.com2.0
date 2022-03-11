@@ -26,6 +26,35 @@ const About: NextPage = () => {
   }
   }`);
 
+  const renderQuote = () => {
+    return (
+      <Box
+        sx={{ maxWidth: 500, margin: "0 auto", p: 2 }}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        {[ABOUT_TEXT.FOUNDER_QUOTE_1, ABOUT_TEXT.FOUNDER_QUOTE_2].map(
+          (item, index) => {
+            return (
+              <Typography
+                component="h4"
+                sx={{ m: 2, fontSize: 20 }}
+                key={index}
+              >
+                {item}
+              </Typography>
+            );
+          }
+        )}
+        <Typography component="h4" sx={{ m: 2, fontSize: 14, color: "grey" }}>
+          - Founder
+        </Typography>
+      </Box>
+    );
+  };
+
   return (
     <StyledContainer>
       <Main>
@@ -49,29 +78,9 @@ const About: NextPage = () => {
         </Box>
         <Box sx={{ marginTop: 5 }}>
           <Paper sx={{ width: 700, maxWidth: "96vw", margin: "20px auto" }}>
-            <Box
-              sx={{ maxWidth: 500, margin: "0 auto", p: 2 }}
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Typography component="h4" sx={{ m: 2, fontSize: 20 }}>
-                {ABOUT_TEXT.FOUNDER_QUOTE_1}
-              </Typography>
-              <Typography component="h4" sx={{ m: 2, fontSize: 20 }}>
-                {ABOUT_TEXT.FOUNDER_QUOTE_2}
-              </Typography>
-              <Typography
-                component="h4"
-                sx={{ m: 2, fontSize: 14, color: "grey" }}
-              >
-                - Founder
-              </Typography>
-            </Box>
+            {renderQuote()}
           </Paper>
         </Box>
-        {/* </Paper> */}
         <Box sx={{ textAlign: "center", paddingBottom: 10, marginTop: 12 }}>
           <Typography
             sx={{ textAlign: "center", m: 2, fontSize: 20, fontWeight: "bold" }}
