@@ -24,7 +24,6 @@ const About: NextPage = () => {
   @media only screen and (min-width: 1000px) {
     font-size: 40px;
   }
-
   }`);
 
   return (

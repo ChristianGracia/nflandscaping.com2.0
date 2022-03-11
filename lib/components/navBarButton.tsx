@@ -12,16 +12,6 @@ const NavLinkButton = ({
   children = null,
   newTab = false,
 }: NavLinkButtonProps) => {
-  const StyledContainer = styled.div(`
-  a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    &:hover {
-      color: grey;
-    }
-  }
-  `);
   return (
     <StyledContainer>
       <Link href={to} as={to} shallow>
@@ -32,5 +22,16 @@ const NavLinkButton = ({
     </StyledContainer>
   );
 };
+
+const StyledContainer = styled.div(`
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  &:hover {
+    color: grey;
+  }
+}
+`);
 
 export default NavLinkButton;

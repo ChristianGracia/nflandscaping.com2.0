@@ -31,17 +31,6 @@ const ContactForm = (props: any) => {
     }
   };
 
-  const StyledContainer = styled.div(`
-  .estimate-text {
-    font-size: 15px;
-    text-align: center;
-    margin: 30px 0;
-    @media only screen and (min-width: 1000px) {
-      font-size: 30px;
-    }
-
-  }`);
-
   const handleChange = (e: any) => {
     e.preventDefault();
     const value = e.target.value;
@@ -88,7 +77,6 @@ const ContactForm = (props: any) => {
       <StyledContainer>
         {/* <Typography component="p" className="estimate-text"> */}
         <Box sx={{ marginTop: 3 }}>
-          {" "}
           <WaveText text={CONTACT_TEXT.ESTIMATE_TEXT} fontSize={18} />
         </Box>
 
@@ -157,5 +145,16 @@ const ContactForm = (props: any) => {
     </Box>
   );
 };
+
+const StyledContainer = styled.div(`
+.estimate-text {
+  font-size: 15px;
+  text-align: center;
+  margin: 30px 0;
+  @media only screen and (min-width: 1000px) {
+    font-size: 30px;
+  }
+
+}`);
 
 export default ContactForm;
