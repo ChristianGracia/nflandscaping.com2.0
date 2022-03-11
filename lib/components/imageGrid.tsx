@@ -1,14 +1,40 @@
 import Grid from "@mui/material/Grid";
 import styled from "@emotion/styled";
 
+
+interface SectionedImageProps {
+  name: string,
+  numberOfImages: number,
+}
 interface ImageGridProps {
-  images: string[];
-  prepend: string;
+  images: string[],
+  prepend: string,
+  sectionedImages: SectionedImageProps[],
 }
 
 const ImageGrid = (props: ImageGridProps) => {
+  const createImages = (image: SectionedImageProps) => {
+    return Array.from(Array(image.numberOfImages - 1).keys()).map((item) => {       
+      return <img
+      className="image"
+      src={`${props.prepend}${image.name}/${item + 1}.JPG`}
+      alt="gallery image"
+    />
+  })
+}
+
+  const renderSectionedImages = () => {
+    return props.sectionedImages.map((image: SectionedImageProps, index: number) => {
+      return (
+        <Grid key={index} item>
+          {createImages(image)}
+        </Grid>
+      );
+    });
+  }
   return (
     <StyledContainer>
+      {props.sectionedImages.length > 0 ?  renderSectionedImages() : null}
       <Grid className="image-container" container>
         {props.images.map((item: string, index: number) => {
           return (

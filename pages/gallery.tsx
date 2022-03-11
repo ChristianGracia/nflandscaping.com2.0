@@ -7,7 +7,6 @@ import GallerySectionCard from "../lib/components/gallerySectionCard";
 import Box from "@mui/material/Box";
 import Main from "../lib/components/ui/main";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import GalleryProject from "../lib/components/galleryProject";
 
 interface GalleryProjectProps {
   name: string;
@@ -76,8 +75,8 @@ const galleryItems: GalleryItem[] = [
     imageUrl: "GalleryImageL.jpg",
     prepend: "images/gallery-images/",
     sectionedImages: [
-      { name: "project1", numberOfImages: 8 },
-      { name: "project2", numberOfImages: 15 },
+      { name: "landscaping-construction/project1", numberOfImages: 18 },
+  
     ],
     images: landscapingImages,
   },
@@ -85,7 +84,10 @@ const galleryItems: GalleryItem[] = [
     title: "Home Improvement",
     imageUrl: "GalleryImageHI.jpg",
     prepend: "images/gallery-images/",
-    sectionedImages: [{ name: "project1", numberOfImages: 18 }],
+    sectionedImages: [
+      { name: "home-improvement/project2", numberOfImages: 8 },
+      { name: "home-improvement/project2", numberOfImages: 15 }
+    ],
     images: homeImpImages,
   },
   {
@@ -116,28 +118,14 @@ const Gallery: NextPage = () => {
     );
   };
 
-  const renderGalleryProject = (
-    images: GalleryProjectProps[],
-  ) => {
-    return images.map((image: GalleryProjectProps, index: number) => {
-  
-      return (<Box key={index}>
-        <GalleryProject name={image.name} numberOfImages={image.numberOfImages} />
-      </Box>)
-    });
-  };
-
   const renderGallery = (item: GalleryItem, index: number) => {
     if (currentSection === item.title) {
-      console.log(item);
       return (
         <Box  key={index}>
-          {item.sectionedImages.length > 0
-            ? renderGalleryProject(item.sectionedImages)
-            : null}
           <ImageGrid
             prepend={item.prepend}
             images={item.images}
+            sectionedImages={item.sectionedImages}
           ></ImageGrid>
         </Box>
       );
