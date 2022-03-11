@@ -46,6 +46,7 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        filter: brightness(140%);
       }
     
       .content {

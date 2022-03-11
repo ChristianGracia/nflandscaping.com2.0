@@ -46,6 +46,20 @@ const landscapingImages: string[] = [
   "gallery34.jpeg",
 ];
 
+const snowRemovalImages: string[] = [
+  "1.JPG",
+  "2.JPG",
+  "4.JPG",
+  "5.JPG",
+  "6.JPG",
+  "7.JPG",
+  "8.JPG",
+  "9.JPG",
+  "10.JPG",
+  "11.JPG",
+  "12.JPG",
+];
+
 const galleryItems: GalleryItem[] = [
   {
     title: "Landscaping / Construction",
@@ -55,11 +69,17 @@ const galleryItems: GalleryItem[] = [
     title: "Home Improvement",
     imageUrl: "GalleryImageHI.jpg",
   },
+  {
+    title: "Snow Removal",
+    imageUrl: "GalleryImageSR.jpg",
+  },
 ];
 
 const Gallery: NextPage = () => {
   const [showHomeImpImages, setShowHomeImpImages] = useState<boolean>(false);
   const [showLandscapingImages, setShowLandscapingImages] =
+    useState<boolean>(false);
+    const [showSnowRemovalImages, setShowSnowRemovalImages] =
     useState<boolean>(false);
   const [showSelectionButtons, setShowSelectionButtons] =
     useState<boolean>(true);
@@ -69,6 +89,9 @@ const Gallery: NextPage = () => {
       setShowLandscapingImages(true);
     } else if (title === "Home Improvement") {
       setShowHomeImpImages(true);
+    }
+    else if (title === "Snow Removal") {
+      setShowSnowRemovalImages(true);
     }
     setShowSelectionButtons(false);
   };
@@ -86,6 +109,7 @@ const Gallery: NextPage = () => {
   const handleBackButton = () => {
     setShowLandscapingImages(false);
     setShowHomeImpImages(false);
+    setShowSnowRemovalImages(false);
     setShowSelectionButtons(true);
   };
   return (
@@ -99,6 +123,8 @@ const Gallery: NextPage = () => {
               ? "Home Improvement"
               : showLandscapingImages
               ? "Landscaping / Construction"
+              : showSnowRemovalImages
+              ? "Snow Removal"
               : ""
           }
         />
@@ -131,6 +157,12 @@ const Gallery: NextPage = () => {
             <ImageGrid
               prepend={"images/gallery-images/"}
               images={landscapingImages}
+            ></ImageGrid>
+          )}
+          {showSnowRemovalImages && (
+            <ImageGrid
+              prepend={"images/gallery-images/snow-removal/"}
+              images={snowRemovalImages}
             ></ImageGrid>
           )}
         </Box>
