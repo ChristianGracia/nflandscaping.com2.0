@@ -8,14 +8,10 @@ import Image from "next/image";
 const Landing: NextPage = () => {
   const StyledContainer = styled.div`
     .backgroundimage {
-      z-index: 0;
-    }
-    .logo-landing {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      height: 20vh;
-      margin-top: 12vh;
+      z-index: 0;
     }
 
     .quote {
@@ -52,54 +48,53 @@ const Landing: NextPage = () => {
     <div>
       <main>
         <StyledContainer>
-            <Image 
-              src="/images/background.png"
-              className="background-image"
-              alt='picture of lawn'
-              layout='fill'
-              objectFit='cover'
-              objectPosition='center'
-              placeholder='blur'
-              blurDataURL="/images/background.png"
-              priority
-            />
+          <Image
+            src="/images/background.png"
+            className="background-image"
+            alt="picture of lawn"
+            layout="fill"
+            // objectFit='cover'
+            // objectPosition='center'
+            placeholder="blur"
+            blurDataURL="/images/background.png"
+            priority={true}
+          />
+          <Box
+            className="container"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Box
-              className="container"
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
+              sx={{
+                marginTop: 10,
+              }}
             >
-              <Box
-                sx={{
-                  marginTop: 10,
-                }}
-              >
-                <Image
-                  src="/logo.png"
-                  height={110}
-                  width={310}
-                  alt="nfl logo"
-                  
-                  priority
-                />
-              </Box>
-              <Typography className="quote" component="span" sx={{ m: 1 }}>
-                “We see our customers as invited guests to a party, and we are
-                the hosts. It’s our job to make the customer experience a little
-                bit better.”
-              </Typography>
-              <Typography className="quoteSign" component="span">
-                -Jeff Bezos, Founder of Amazon
-              </Typography>
-              <Button
-                variant="contained"
-                className="landingButton"
-                onClick={() => (window.location.href = "/home")}
-              >
-                <Typography component="span">Join the Party</Typography>
-              </Button>
+              <Image
+                src="/logo.png"
+                height={110}
+                width={310}
+                alt="nfl logo"
+                priority={true}
+              />
             </Box>
+            <Typography className="quote" component="span" sx={{ m: 1 }}>
+              “We see our customers as invited guests to a party, and we are the
+              hosts. It’s our job to make the customer experience a little bit
+              better.”
+            </Typography>
+            <Typography className="quoteSign" component="span">
+              -Jeff Bezos, Founder of Amazon
+            </Typography>
+            <Button
+              variant="contained"
+              className="landingButton"
+              onClick={() => (window.location.href = "/home")}
+            >
+              <Typography component="span">Join the Party</Typography>
+            </Button>
+          </Box>
         </StyledContainer>
       </main>
     </div>

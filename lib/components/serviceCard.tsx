@@ -18,32 +18,6 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ item, Icon }: ServiceCardProps) => {
-  const StyledContainer = styled.div(`
-  width: 400px;
-  max-width: 99vw;
-  height: 400px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin: 25px;
-
-  &:hover {
-    cursor: pointer;
-    & .background-image {
-      transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    }
-    & .content {
-      opacity: 0.9;
-    }
-  }
-  .service-text {
-    margin-right: 5px;
-  }
-  `);
   return (
     <StyledContainer>
       <Card raised={true}>
@@ -73,5 +47,32 @@ const ServiceCard = ({ item, Icon }: ServiceCardProps) => {
     </StyledContainer>
   );
 };
+
+const StyledContainer = styled.div(`
+  width: 400px;
+  max-width: 99vw;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 25px;
+
+  &:hover {
+    cursor: pointer;
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+    & .content {
+      opacity: 0.9;
+    }
+  }
+  .service-text {
+    margin-right: 5px;
+  }
+`);
 
 export default ServiceCard;

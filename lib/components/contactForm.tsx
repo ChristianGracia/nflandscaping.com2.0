@@ -7,6 +7,7 @@ import SendEmail from "../services/emailService";
 import { CONTACT_TEXT } from "../utility/constants";
 import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
+import WaveText from "./waveText";
 const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
@@ -29,17 +30,6 @@ const ContactForm = (props: any) => {
       setFormError(true);
     }
   };
-
-  const StyledContainer = styled.div(`
-  .estimate-text {
-    font-size: 15px;
-    text-align: center;
-    margin: 30px 0;
-    @media only screen and (min-width: 1000px) {
-      font-size: 30px;
-    }
-
-  }`);
 
   const handleChange = (e: any) => {
     e.preventDefault();
@@ -85,9 +75,12 @@ const ContactForm = (props: any) => {
     ];
     return (
       <StyledContainer>
-        <Typography component="p" className="estimate-text">
-          {CONTACT_TEXT.ESTIMATE_TEXT}
-        </Typography>
+        {/* <Typography component="p" className="estimate-text"> */}
+        <Box sx={{ marginTop: 3 }}>
+          <WaveText text={CONTACT_TEXT.ESTIMATE_TEXT} fontSize={18} />
+        </Box>
+
+        {/* </Typography> */}
         <Box display="flex" flexDirection="column" alignItems="center">
           {formObjArr.map((item: FormProps, index: number) => {
             return (
@@ -152,5 +145,16 @@ const ContactForm = (props: any) => {
     </Box>
   );
 };
+
+const StyledContainer = styled.div(`
+.estimate-text {
+  font-size: 15px;
+  text-align: center;
+  margin: 30px 0;
+  @media only screen and (min-width: 1000px) {
+    font-size: 30px;
+  }
+
+}`);
 
 export default ContactForm;

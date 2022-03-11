@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 
 interface NavLinkButtonProps {
   to: string;
@@ -12,16 +13,18 @@ const NavLinkButton = ({
   children = null,
   newTab = false,
 }: NavLinkButtonProps) => {
+  const router = useRouter();
+
   const StyledContainer = styled.div(`
-  a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    &:hover {
-      color: grey;
-    }
+a {
+  text-decoration: none;
+  color: ${!newTab && router.asPath === to ? "#2d77a9" : "black"};
+  cursor: pointer;
+  &:hover {
+    color: grey;
   }
-  `);
+}
+`);
   return (
     <StyledContainer>
       <Link href={to} as={to} shallow>

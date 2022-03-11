@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Grid";
 import styled from "@emotion/styled";
-import Image from "next/image";
 
 interface ImageGridProps {
   images: string[];
@@ -8,20 +7,6 @@ interface ImageGridProps {
 }
 
 const ImageGrid = (props: ImageGridProps) => {
-  const StyledContainer = styled.div(`
-    .image {
-      width: 100vw;
-      max-width: 420px;
-      height: 400px;
-      margin: 0 auto;
-    }
-    .image-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 32px;
-    }`);
   return (
     <StyledContainer>
       <Grid className="image-container" container>
@@ -33,12 +18,6 @@ const ImageGrid = (props: ImageGridProps) => {
                 src={`${props.prepend}${item}`}
                 alt="gallery image"
               />
-              {/* <Image
-                className="image"
-                layout="fill"
-                src={`/${props.prepend}${item}`}
-                alt="gallery image"
-              /> */}
             </Grid>
           );
         })}
@@ -46,5 +25,20 @@ const ImageGrid = (props: ImageGridProps) => {
     </StyledContainer>
   );
 };
+
+const StyledContainer = styled.div(`
+.image {
+  width: 100vw;
+  max-width: 420px;
+  height: 400px;
+  margin: 0 auto;
+}
+.image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 32px;
+}`);
 
 export default ImageGrid;

@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import Main from "../lib/components/ui/main";
 import styled from "@emotion/styled";
+import WaveText from "../lib/components/waveText";
 
 const About: NextPage = () => {
   const StyledContainer = styled.div(`
@@ -23,63 +24,63 @@ const About: NextPage = () => {
   @media only screen and (min-width: 1000px) {
     font-size: 40px;
   }
-
   }`);
+
+  const renderQuote = () => {
+    return (
+      <Box
+        sx={{ maxWidth: 500, margin: "0 auto", p: 2 }}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        {[ABOUT_TEXT.FOUNDER_QUOTE_1, ABOUT_TEXT.FOUNDER_QUOTE_2].map(
+          (item, index) => {
+            return (
+              <Typography
+                component="h4"
+                sx={{ m: 2, fontSize: 20 }}
+                key={index}
+              >
+                {item}
+              </Typography>
+            );
+          }
+        )}
+        <Typography component="h4" sx={{ m: 2, fontSize: 14, color: "grey" }}>
+          - Founder
+        </Typography>
+      </Box>
+    );
+  };
 
   return (
     <StyledContainer>
       <Main>
         <PageHeader title="About Us" />
-        <Box sx={{ margin: 6 }}>
-          <Typography
-            className="estimate-text"
-            sx={{ textAlign: "center", m: 1, fontSize: 30 }}
-            component="p"
-          >
-            {ABOUT_TEXT.CUT_CORNER_TEXT}
-          </Typography>
+        <Box
+          sx={{ margin: 2 }}
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <WaveText text={ABOUT_TEXT.CUT_CORNER_TEXT} fontSize={24} />
         </Box>
-        {/* <Paper sx={{ maxWidth: "90vw", margin: "0 auto", p: 2 }}> */}
+
         <Box
           display="flex"
           justifyContent="center"
           sx={{ maxWidth: 500, margin: "10px auto" }}
         >
           <img src="images/about-us.jpg" width="95%" alt="Picture of founder" />
-          {/* <Image
-              src="/images/about-us.jpg"
-              layout={'fill'}
-              
-              height={300}
-             
-              alt="Picture of founder"
-            /> */}
         </Box>
         <Box sx={{ marginTop: 5 }}>
           <Paper sx={{ width: 700, maxWidth: "96vw", margin: "20px auto" }}>
-            <Box
-              sx={{ maxWidth: 500, margin: "0 auto", p: 2 }}
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Typography component="h4" sx={{ m: 2, fontSize: 20 }}>
-                {ABOUT_TEXT.FOUNDER_QUOTE_1}
-              </Typography>
-              <Typography component="h4" sx={{ m: 2, fontSize: 20 }}>
-                {ABOUT_TEXT.FOUNDER_QUOTE_2}
-              </Typography>
-              <Typography
-                component="h4"
-                sx={{ m: 2, fontSize: 14, color: "grey" }}
-              >
-                - Founder
-              </Typography>
-            </Box>
+            {renderQuote()}
           </Paper>
         </Box>
-        {/* </Paper> */}
         <Box sx={{ textAlign: "center", paddingBottom: 10, marginTop: 12 }}>
           <Typography
             sx={{ textAlign: "center", m: 2, fontSize: 20, fontWeight: "bold" }}

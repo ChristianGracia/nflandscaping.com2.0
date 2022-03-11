@@ -3,9 +3,9 @@ import { ThemeOptions } from "@mui/material/styles";
 const lightThemeOptions: ThemeOptions = {
   palette: {
     mode: "light",
-    // primary: {
-    //   main: purple[500],
-    // },
+    primary: {
+      main: "#2d77a9",
+    },
     // secondary: {
     //   main: green[500],
     // },

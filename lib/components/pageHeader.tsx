@@ -5,14 +5,15 @@ interface PageHeaderProps {
 }
 
 const PageHeader = ({ title }: PageHeaderProps) => {
-  const StyledContainer = styled.div`
-    color: black;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 20px 0;
-    text-align: center;
-  `;
   return <StyledContainer>{title}</StyledContainer>;
 };
+
+const StyledContainer = styled.div`
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+`;
 
 export default PageHeader;
