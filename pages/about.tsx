@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import Main from "../lib/components/ui/main";
 import styled from "@emotion/styled";
+import WaveText from "../lib/components/waveText";
 
 const About: NextPage = () => {
   const StyledContainer = styled.div(`
@@ -30,30 +31,22 @@ const About: NextPage = () => {
     <StyledContainer>
       <Main>
         <PageHeader title="About Us" />
-        <Box sx={{ margin: 6 }}>
-          <Typography
-            className="estimate-text"
-            sx={{ textAlign: "center", m: 1, fontSize: 30 }}
-            component="p"
-          >
-            {ABOUT_TEXT.CUT_CORNER_TEXT}
-          </Typography>
+        <Box
+          sx={{ margin: 2 }}
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <WaveText text={ABOUT_TEXT.CUT_CORNER_TEXT} fontSize={24} />
         </Box>
-        {/* <Paper sx={{ maxWidth: "90vw", margin: "0 auto", p: 2 }}> */}
+
         <Box
           display="flex"
           justifyContent="center"
           sx={{ maxWidth: 500, margin: "10px auto" }}
         >
           <img src="images/about-us.jpg" width="95%" alt="Picture of founder" />
-          {/* <Image
-              src="/images/about-us.jpg"
-              layout={'fill'}
-              
-              height={300}
-             
-              alt="Picture of founder"
-            /> */}
         </Box>
         <Box sx={{ marginTop: 5 }}>
           <Paper sx={{ width: 700, maxWidth: "96vw", margin: "20px auto" }}>
