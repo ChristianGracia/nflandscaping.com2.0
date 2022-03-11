@@ -33,7 +33,7 @@ const Footer = () => {
       </Typography>
       <NavLinkButton newTab={true} to="http://www.christiangracia.com">
         <Typography
-          component="span"
+          component="p"
           className="footer-item"
           sx={{ color: "blue" }}
         >
