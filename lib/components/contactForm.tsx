@@ -7,6 +7,7 @@ import SendEmail from "../services/emailService";
 import { CONTACT_TEXT } from "../utility/constants";
 import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
+import WaveText from "./waveText";
 const ContactForm = (props: any) => {
   const [nameValue, setNameValue] = useState<string>("");
   const [phoneValue, setPhoneValue] = useState<string>("");
@@ -85,9 +86,13 @@ const ContactForm = (props: any) => {
     ];
     return (
       <StyledContainer>
-        <Typography component="p" className="estimate-text">
-          {CONTACT_TEXT.ESTIMATE_TEXT}
-        </Typography>
+        {/* <Typography component="p" className="estimate-text"> */}
+        <Box sx={{ marginTop: 3 }}>
+          {" "}
+          <WaveText text={CONTACT_TEXT.ESTIMATE_TEXT} fontSize={18} />
+        </Box>
+
+        {/* </Typography> */}
         <Box display="flex" flexDirection="column" alignItems="center">
           {formObjArr.map((item: FormProps, index: number) => {
             return (

@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import Image from "next/image";
 import NavLinkButton from "./navBarButton";
+import WaveText from "./waveText";
 interface Item {
   image: string;
   description: string;
@@ -20,7 +21,6 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
     height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
     z-index: 0;
     .carousel-image {
       filter: brightness(80%)
@@ -85,62 +85,12 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   }
     }
 
-
-    .loading {
-      text-align: center;
-      span {
-        display: inline-block;
-        margin: 0 -0.05em;
-      }
-    }
-
-    .loading-animation {
-      span {
-        margin: 0 -0.05em;
-        animation: loading-animation 0.7s infinite alternate;
-        @for $i from 1 through 6 {
-          &:nth-of-type(#{$i + 1}) {
-            animation-delay: #{$i * 0.1}s;
-          }
-        }
-      }
-    }
-    @keyframes loading-animation {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0.8);
-      }
-    }
     .call-icon {
       &:hover {
         color: grey;
       }
     }
   `;
-
-  const renderWaveText = () => {
-    return "0% In-house Financing Available"
-      .split("")
-      .map((item: string, index: number) => {
-        return (
-          <Box
-            component="span"
-            className="loading loading-animation"
-            key={index}
-          >
-            <Box
-              component="span"
-              className="loading loading-animation finance-text"
-              sx={{ padding: item === " " ? 0.4 : 0.1 }}
-            >
-              {item}
-            </Box>
-          </Box>
-        );
-      });
-  };
   return (
     <StyledContainer>
       <Image
@@ -179,7 +129,6 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
               alignItems="center"
               className="call-icon"
             >
-              {" "}
               <LocalPhoneIcon />
               {PHONE_NUMBER}
             </Box>
@@ -197,7 +146,7 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         alignItems="center"
         justifyContent="center"
       >
-        {renderWaveText()}
+        <WaveText text="0% In-house Financing Available" fontSize={26} />
       </Box>
     </StyledContainer>
   );
