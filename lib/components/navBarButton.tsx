@@ -18,7 +18,7 @@ const NavLinkButton = ({
   const StyledContainer = styled.div(`
 a {
   text-decoration: none;
-  color: ${router.asPath === to ? "#2d77a9" : "black"};
+  color: ${!newTab && router.asPath === to ? "#2d77a9" : "black"};
   cursor: pointer;
   &:hover {
     color: grey;
