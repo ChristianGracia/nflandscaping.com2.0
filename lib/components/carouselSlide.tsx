@@ -79,10 +79,12 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
       &:hover {
         background-color: white;
       }
+  
       padding: 6px;
       border-radius: 5px;
   }
     }
+
 
     .loading {
       text-align: center;
@@ -111,6 +113,11 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         transform: scale(0.8);
       }
     }
+    .call-icon {
+      &:hover {
+        color: grey;
+      }
+    }
   `;
 
   const renderWaveText = () => {
@@ -136,14 +143,14 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
   };
   return (
     <StyledContainer>
-      <Image 
+      <Image
         src={`/images/carousel-images/${item.image}`}
         className="carousel-image"
-        alt='carousel image'
-        layout='fill'
-        objectFit='cover'
-        objectPosition='center'
-        placeholder='blur'
+        alt="carousel image"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        placeholder="blur"
         blurDataURL={`/images/carousel-images/${item.image}`}
         priority={true}
       />
@@ -163,14 +170,20 @@ const CarouselSlide = ({ item }: CarouselSlideProps) => {
         )}
       </Box>
 
-      <Box className="button-div" sx={{ marginTop: 10 }}>
-        <Button variant="contained" className="image-button call-button">
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <LocalPhoneIcon />
-            <NavLinkButton newTab={false} to={`tel:${PHONE_NUMBER}`}>
+      <Box className="button-div call-button" sx={{ marginTop: 10 }}>
+        <Button variant="contained" className="image-button">
+          <NavLinkButton newTab={false} to={`tel:${PHONE_NUMBER}`}>
+            <Box
+              display="flex"
+              flexDirection="row"
+              alignItems="center"
+              className="call-icon"
+            >
+              {" "}
+              <LocalPhoneIcon />
               {PHONE_NUMBER}
-            </NavLinkButton>
-          </Box>
+            </Box>
+          </NavLinkButton>
         </Button>
         <Button variant="contained" className="image-button estimate-button">
           <NavLinkButton newTab={false} to={"/contact"}>

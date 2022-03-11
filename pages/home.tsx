@@ -14,8 +14,8 @@ const Home: NextPage = () => {
   const createSlides = () => {
     return carouselSlides.map((item, i) => (
       <CarouselSlide key={i} item={item} />
-    ))
-  }
+    ));
+  };
   return (
     <Main showFooter={false}>
       <div>
