@@ -76,24 +76,11 @@ const galleryItems: GalleryItem[] = [
 ];
 
 const Gallery: NextPage = () => {
-  const [showHomeImpImages, setShowHomeImpImages] = useState<boolean>(false);
-  const [showLandscapingImages, setShowLandscapingImages] =
-    useState<boolean>(false);
-    const [showSnowRemovalImages, setShowSnowRemovalImages] =
-    useState<boolean>(false);
-  const [showSelectionButtons, setShowSelectionButtons] =
-    useState<boolean>(true);
+  const [currentSection, setCurrentSection] = useState<string>("Before & After");
+
 
   const selectService = (title: string) => {
-    if (title === "Landscaping / Construction") {
-      setShowLandscapingImages(true);
-    } else if (title === "Home Improvement") {
-      setShowHomeImpImages(true);
-    }
-    else if (title === "Snow Removal") {
-      setShowSnowRemovalImages(true);
-    }
-    setShowSelectionButtons(false);
+    setCurrentSection(title);
   };
 
   const renderGallerySectionCard = (item: GalleryItem, index: number) => {
@@ -107,29 +94,16 @@ const Gallery: NextPage = () => {
   };
 
   const handleBackButton = () => {
-    setShowLandscapingImages(false);
-    setShowHomeImpImages(false);
-    setShowSnowRemovalImages(false);
-    setShowSelectionButtons(true);
+    setCurrentSection("Before & After");
   };
   return (
     <Main>
       <div>
         <PageHeader
-          title={
-            showSelectionButtons
-              ? "Before & After"
-              : showHomeImpImages
-              ? "Home Improvement"
-              : showLandscapingImages
-              ? "Landscaping / Construction"
-              : showSnowRemovalImages
-              ? "Snow Removal"
-              : ""
-          }
+          title={currentSection}
         />
         <Box sx={{ paddingBottom: 10 }}>
-          {showSelectionButtons ? (
+          {currentSection === "Before & After" ? (
             <Box
               display="flex"
               flexDirection="row"
@@ -147,19 +121,19 @@ const Gallery: NextPage = () => {
               Back
             </Button>
           )}
-          {showHomeImpImages && (
+          {currentSection === 'Home Improvement' && (
             <ImageGrid
               prepend={"images/gallery-images/"}
               images={homeImpImages}
             ></ImageGrid>
           )}
-          {showLandscapingImages && (
+          {currentSection === 'Landscaping / Construction' && (
             <ImageGrid
               prepend={"images/gallery-images/"}
               images={landscapingImages}
             ></ImageGrid>
           )}
-          {showSnowRemovalImages && (
+          {currentSection === 'Snow Removal' && (
             <ImageGrid
               prepend={"images/gallery-images/snow-removal/"}
               images={snowRemovalImages}
