@@ -10,6 +10,8 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 interface GalleryItem {
   title: string;
   imageUrl: string;
+  prepend: string;
+  images: string[];
 }
 
 const homeImpImages: string[] = [
@@ -64,20 +66,26 @@ const galleryItems: GalleryItem[] = [
   {
     title: "Landscaping / Construction",
     imageUrl: "GalleryImageL.jpg",
+    prepend: "images/gallery-images/",
+    images: landscapingImages,
   },
   {
     title: "Home Improvement",
     imageUrl: "GalleryImageHI.jpg",
+    prepend: "images/gallery-images/",
+    images: homeImpImages,
   },
   {
     title: "Snow Removal",
     imageUrl: "GalleryImageSR.jpg",
+    prepend: "images/gallery-images/snow-removal/",
+    images: snowRemovalImages,
   },
 ];
 
 const Gallery: NextPage = () => {
-  const [currentSection, setCurrentSection] = useState<string>("Before & After");
-
+  const [currentSection, setCurrentSection] =
+    useState<string>("Before & After");
 
   const selectService = (title: string) => {
     setCurrentSection(title);
@@ -93,15 +101,26 @@ const Gallery: NextPage = () => {
     );
   };
 
+  const renderGallery = (item: GalleryItem, index: number) => {
+    if (currentSection === item.title) {
+      return (
+        <ImageGrid
+          key={index}
+          prepend={item.prepend}
+          images={item.images}
+        ></ImageGrid>
+      );
+    }
+    return null;
+  };
+
   const handleBackButton = () => {
     setCurrentSection("Before & After");
   };
   return (
     <Main>
       <div>
-        <PageHeader
-          title={currentSection}
-        />
+        <PageHeader title={currentSection} />
         <Box sx={{ paddingBottom: 10 }}>
           {currentSection === "Before & After" ? (
             <Box
@@ -121,23 +140,8 @@ const Gallery: NextPage = () => {
               Back
             </Button>
           )}
-          {currentSection === 'Home Improvement' && (
-            <ImageGrid
-              prepend={"images/gallery-images/"}
-              images={homeImpImages}
-            ></ImageGrid>
-          )}
-          {currentSection === 'Landscaping / Construction' && (
-            <ImageGrid
-              prepend={"images/gallery-images/"}
-              images={landscapingImages}
-            ></ImageGrid>
-          )}
-          {currentSection === 'Snow Removal' && (
-            <ImageGrid
-              prepend={"images/gallery-images/snow-removal/"}
-              images={snowRemovalImages}
-            ></ImageGrid>
+          {galleryItems.map((item: GalleryItem, index: number) =>
+            renderGallery(item, index)
           )}
         </Box>
       </div>
