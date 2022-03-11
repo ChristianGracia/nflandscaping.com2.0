@@ -8,6 +8,9 @@ import Image from "next/image";
 const Landing: NextPage = () => {
   const StyledContainer = styled.div`
     .backgroundimage {
+            background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       z-index: 0;
     }
 
@@ -50,8 +53,8 @@ const Landing: NextPage = () => {
               className="background-image"
               alt='picture of lawn'
               layout='fill'
-              objectFit='cover'
-              objectPosition='center'
+              // objectFit='cover'
+              // objectPosition='center'
               placeholder='blur'
               blurDataURL="/images/background.png"
               priority={true}
