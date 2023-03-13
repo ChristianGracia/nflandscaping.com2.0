@@ -15,10 +15,12 @@ import CastForEducationIcon from "@mui/icons-material/CastForEducation";
 import WaterIcon from "@mui/icons-material/Water";
 import FenceIcon from "@mui/icons-material/Fence";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import GridGoldenRatio from "@mui/icons-material/GridGoldenratio";
 const icons = {
   WaterfallChartIcon: <WaterfallChartIcon sx={{ color: "#949494", m: 1 }} />,
   GrassIcon: <GrassIcon sx={{ color: "green", m: 1 }} />,
   DeckIcon: <DeckIcon sx={{ color: "#B37A4C", m: 1 }} />,
+  SiteWorkIcon: <GridGoldenRatio sx={{ color: "#fccf03", m: 1 }} />,
   AcUnitIcon: <AcUnitIcon sx={{ color: "#A5F2F3", m: 1 }} />,
   DeleteSweepIcon: <DeleteSweepIcon sx={{ color: "black", m: 1 }} />,
   PrecisionManufacturingIcon: (
