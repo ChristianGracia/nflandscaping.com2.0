@@ -77,6 +77,11 @@ const SERVICES = [
     icon: "DeckIcon",
   },
   {
+    title: "Site Work",
+    image: "site-work.jpeg",
+    icon: "SiteWorkIcon",
+  },
+  {
     title: "Snow Removal",
     image: "snow-removal.jpg",
     icon: "AcUnitIcon",
