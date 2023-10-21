@@ -20,7 +20,7 @@ const socialLinks: any = {
   },
   Instagram: {
     icon: <InstagramIcon />,
-    url: "https://www.instagram.com/nflandscapeconstruction/",
+    url: "https://www.instagram.com/naturesfrontierenterprise/",
   },
 };
 
