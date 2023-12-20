@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Image from "next/image";
+import Home from "./home";
 
 const Landing: NextPage = () => {
   const StyledContainer = styled.div`
@@ -47,7 +48,7 @@ const Landing: NextPage = () => {
   return (
     <div>
       <main>
-        <StyledContainer>
+        {/* <StyledContainer>
           <Image
             src="/images/background.png"
             className="background-image"
@@ -95,7 +96,8 @@ const Landing: NextPage = () => {
               <Typography component="span">Join the Party</Typography>
             </Button>
           </Box>
-        </StyledContainer>
+        </StyledContainer> */}
+        <Home />
       </main>
     </div>
   );
