@@ -3,6 +3,8 @@ import type { NextPage } from "next";
 import PageHeader from "../../lib/components/pageHeader";
 import Main from "../../lib/components/ui/main";
 import ImageGrid from "../../lib/components/imageGrid";
+import ImageGroup from "../../lib/components/imageGroup";
+import Divider from "../../lib/components/divider";
 const SnowRemoval: NextPage = () => {
     const images: string[] = ['1.jpeg', '2.jpeg', '3.jpeg', '5.jpeg', '6.jpeg', '7.jpeg']
     return (
@@ -13,7 +15,9 @@ const SnowRemoval: NextPage = () => {
 
                 </Box>
             </div>
-            <Box
+            <ImageGroup prepend="/new-images/snow-removal/" images={['1.jpeg', '2.jpeg', '3.jpeg', '5.jpeg', '6.jpeg', '7.jpeg']} />
+            {/* <Divider /> */}
+            {/* <Box
                 display="flex"
                 flexDirection="row"
                 alignItems="center"
@@ -22,7 +26,7 @@ const SnowRemoval: NextPage = () => {
             > <ImageGrid
                 prepend={"/new-images/snow-removal/"}
                 images={images}
-            ></ImageGrid></Box>
+            ></ImageGrid></Box> */}
         </Main>
     );
 };

@@ -4,6 +4,8 @@ import Image from "next/image";
 import PageHeader from "../../lib/components/pageHeader";
 import Main from "../../lib/components/ui/main";
 import Box from "@mui/material/Box";
+import ImageGroup from "../../lib/components/imageGroup";
+import Divider from "../../lib/components/divider";
 const Masonry: NextPage = () => {
     return (
         <Main>
@@ -13,7 +15,29 @@ const Masonry: NextPage = () => {
 
                 </Box>
             </div>
-            <Box
+            <ImageGroup prepend="/new-images/masonry/new/backyard1/" images={["1.jpg", "2.jpg", "3.jpeg", "4.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/backyard2/" images={["1.jpeg", "2.jpeg", "3.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/backyard3/" images={["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/front1/" images={["1.jpeg", "2.jpeg", "3.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/masonry1/" images={["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/tilewalkway/" images={["1.jpeg", "2.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/tilewalkway1/" images={["1.jpeg", "2.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/tilewalkway2/" images={["1.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/tilewalkway3/" images={["1.jpeg", "2.jpeg", "3.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/tilewalkway4/" images={["1.jpeg", "2.jpeg",]} />
+            <Divider />
+            <ImageGroup prepend="/new-images/masonry/new/wall/" images={["1.jpeg"]} />
+            <Divider />
+            {/* <Box
                 display="flex"
                 flexDirection="row"
                 alignItems="center"
@@ -55,7 +79,7 @@ const Masonry: NextPage = () => {
                 flexWrap="wrap">
                 <Image src="/new-images/masonry/tiled-walkway4/masonry1.jpeg" height={700} width={800} alt="nfl logo" />
                 <Image src="/new-images/masonry/tiled-walkway4/masonry2.jpeg" height={700} width={800} alt="nfl logo" />
-            </Box>
+            </Box> */}
         </Main>
     );
 };
