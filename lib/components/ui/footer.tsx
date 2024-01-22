@@ -44,7 +44,7 @@ const Footer = () => {
         |
       </Typography>
       <Typography component="span" className="footer-item hidden">
-        <small>Copyright &copy; 2022</small>
+        <small>Copyright &copy; 2023</small>
       </Typography>
     </StyledContainer>
   );

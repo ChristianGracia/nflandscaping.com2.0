@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import styled from "@emotion/styled";
-
+import Image from "next/image";
 interface ImageGridProps {
   images: string[];
   prepend: string;
@@ -9,14 +9,16 @@ interface ImageGridProps {
 const ImageGrid = (props: ImageGridProps) => {
   return (
     <StyledContainer>
-      <Grid className="image-container" container>
+      <Grid className="image-container" gap={4} container>
         {props.images.map((item: string, index: number) => {
           return (
             <Grid key={index} item>
-              <img
+              <Image
                 className="image"
                 src={`${props.prepend}${item}`}
                 alt="gallery image"
+                width={700}
+                height={500}
               />
             </Grid>
           );

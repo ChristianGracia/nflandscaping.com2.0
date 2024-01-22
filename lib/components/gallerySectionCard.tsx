@@ -1,29 +1,33 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 interface Item {
   title: string;
   imageUrl: string;
+  path: string;
 }
 
 interface GallerySectionCardProps {
   item: Item;
-  handleClick: (title: any) => any;
 }
 
-const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
+const GallerySectionCard = ({ item, }: GallerySectionCardProps) => {
   const StyledContainer = styled.div(
     `
     .menu-item {
       width: 90vw;
       max-width: 500px;
+      @media only screen and (min-width: 900px) {
+          max-width: 40vw;
+      }
       height: 300px;
       flex: 1 1 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid black;
+      // border: 1px solid black;
       margin: 10px 20px;
       overflow: hidden;
     
@@ -74,18 +78,20 @@ const GallerySectionCard = ({ item, handleClick }: GallerySectionCardProps) => {
     `
   );
   return (
-    <StyledContainer onClick={handleClick}>
-      <Box className="menu-item">
-        <Box className="background-image" />
-        <Box className="content">
-          <Typography component="h4" className="title">
-            {item.title}
-          </Typography>
-          <Typography component="span" className="subtitle">
-            View Now
-          </Typography>
-        </Box>
-      </Box>
+    <StyledContainer>
+      <Link href={`gallery/${item.path}`} >
+        <Box className="menu-item">
+          <Box className="background-image" />
+          <Box className="content">
+            <Typography component="h4" className="title">
+              {item.title}
+            </Typography>
+
+            <Typography component="span" className="subtitle">
+              View
+            </Typography>
+          </Box>
+        </Box></Link>
     </StyledContainer>
   );
 };
